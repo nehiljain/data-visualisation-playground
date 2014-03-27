@@ -5,3 +5,12 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+
+div.bar {
+	display: inline-block;
+	width: 20px;
+	height: 75px;
+	background-color: #d96f4e;
+	margin-right: 10px;
+}
