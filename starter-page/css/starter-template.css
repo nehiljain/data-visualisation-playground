@@ -7,10 +7,47 @@ body {
 }
 
 
-div.bar {
-	display: inline-block;
-	width: 20px;
-	height: 75px;
-	background-color: #d96f4e;
-	margin-right: 10px;
+.node {
+
+    cursor: pointer;
+
+}
+
+.node circle {
+
+    fill: #fff;
+
+    stroke: #A40F15;
+
+    stroke-width: 1.5px;
+
+}
+
+.node text {
+
+    font: 10px sans-serif;
+
+}
+
+svg path.link {
+
+    fill: none;
+    stroke: #020001;
+    stroke-width: 1.5px;
+
+}
+
+
+svg path.endurance {
+	stroke: #dd2a51;
+	stroke-width: 15.510118932025104px;
+	stroke-linecap: round;
+	fill: none;
+}
+
+svg path.power {
+	stroke: #3edd88;
+	stroke-width: 15.510118932025104px;
+	stroke-linecap: round;
+	fill:none;
 }
