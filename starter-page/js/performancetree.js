@@ -249,8 +249,9 @@ function update(source) {
 
     nodeEnter.append("circle")
         .attr("r", 1e-6)
+        .style("stroke", function(d) { return d.linkcolor;})
         .style("fill", function (d) {
-        return d._children ? "lightsteelblue" : "#fff";
+        return d._children ? d.linkcolor : "#fff";
     });
 
     nodeEnter.append("text")
@@ -277,7 +278,7 @@ function update(source) {
     nodeUpdate.select("circle")
         .attr("r", 4.5)
         .style("fill", function (d) {
-        return d._children ? "lightsteelblue" : "#fff";
+        return d._children ? d.linkcolor : "#fff";
     });
 
     nodeUpdate.select("text")
