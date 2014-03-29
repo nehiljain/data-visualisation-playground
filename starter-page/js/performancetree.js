@@ -22,19 +22,19 @@ var geneticData = {
   {
    "name": "Endurance",
    "type": "category",
-   "linkcolor": "#dd2a51",
+   "linkcolor": "#00a65a",
    "className" : "endurance",
    "children": [
     {
      "name": "Heart Capacity",
      "type": "phenotype",
-     "linkcolor": "#dd2a51",
+     "linkcolor": "#00a65a",
      "className" : "endurance",
      "children": [
       {
         "name": "snp112341",
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 0,
         "weight": 8,
@@ -42,7 +42,7 @@ var geneticData = {
       {
         "name": "snp24234", 
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
         "weight": 4,
@@ -50,7 +50,7 @@ var geneticData = {
       {
         "name": "snp35243", 
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "weight": 9,
@@ -61,13 +61,13 @@ var geneticData = {
     {
      "name": "Endurance",
      "type": "phenotype",
-     "linkcolor": "#dd2a51",
+     "linkcolor": "#00a65a",
      "className" : "endurance",
      "children": [
       {
         "name": "snp673654",
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "weight": 2,
@@ -75,7 +75,7 @@ var geneticData = {
       {
         "name": "snp263462", 
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "weight": 4,
@@ -83,7 +83,7 @@ var geneticData = {
       {
         "name": "snp37777", 
         "type": "snp",
-        "linkcolor": "#dd2a51",
+        "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
         "weight": 9,
@@ -95,19 +95,19 @@ var geneticData = {
   {
    "name": "Power",
    "type": "category",
-   "linkcolor": "#3edd88",
+   "linkcolor": "#00c0ef",
    "className" : "power",
    "children": [
     {
      "name": "Strength",
      "type": "phenotype",
-     "linkcolor": "#3edd88",
+     "linkcolor": "#00c0ef",
      "className" : "power",
      "children": [
       {
         "name": "snp112341",
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 0,
         "weight": 8,
@@ -115,7 +115,7 @@ var geneticData = {
       {
         "name": "snp24234", 
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 1,
         "weight": 4,
@@ -123,7 +123,7 @@ var geneticData = {
       {
         "name": "snp35243", 
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
         "weight": 9,
@@ -134,13 +134,13 @@ var geneticData = {
     {
      "name": "Power Capacity",
      "type": "phenotype",
-     "linkcolor": "#3edd88",
+     "linkcolor": "#00c0ef",
      "className" : "power",
      "children": [
       {
         "name": "snp673654",
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
         "weight": 2,
@@ -148,7 +148,7 @@ var geneticData = {
       {
         "name": "snp263462", 
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
         "weight": 4,
@@ -156,8 +156,218 @@ var geneticData = {
       {
         "name": "snp37777", 
         "type": "snp",
-        "linkcolor": "#3edd88",
+        "linkcolor": "#00c0ef",
         "className" : "power", 
+        "value": 1,
+        "weight": 9,
+      },
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Metabolism",
+   "type": "category",
+   "linkcolor": "#0073b7",
+   "className" : "Metabolism",
+   "children": [
+    {
+     "name": "Energy",
+     "type": "phenotype",
+     "linkcolor": "#0073b7",
+     "className" : "Metabolism",
+     "children": [
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp24234", 
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 1,
+        "weight": 4,
+      },
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 2,
+        "weight": 9,
+      },
+      
+     ]
+    },
+    {
+     "name": "Propensity to Exercise",
+     "type": "phenotype",
+     "linkcolor": "#0073b7",
+     "className" : "Metabolism",
+     "children": [
+      {
+        "name": "snp673654",
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 2,
+        "weight": 2,
+      },
+      {
+        "name": "snp263462", 
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 2,
+        "weight": 4,
+      },
+      {
+        "name": "snp37777", 
+        "type": "snp",
+        "linkcolor": "#0073b7",
+        "className" : "Metabolism", 
+        "value": 1,
+        "weight": 9,
+      },
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Recovery",
+   "type": "category",
+   "linkcolor": "#f56954",
+   "className" : "Recovery",
+   "children": [
+    {
+     "name": "Recovery",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "Recovery",
+     "children": [
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp24234", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 1,
+        "weight": 4,
+      },
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 2,
+        "weight": 9,
+      },
+      
+     ]
+    },
+    {
+     "name": "Muscle Fatigue",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "Recovery",
+     "children": [
+      {
+        "name": "snp673654",
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 2,
+        "weight": 2,
+      },
+      {
+        "name": "snp263462", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 2,
+        "weight": 4,
+      },
+      {
+        "name": "snp37777", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 1,
+        "weight": 9,
+      },
+     ]
+    },
+    {
+     "name": "Lung Capacity",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "Recovery",
+     "children": [
+      {
+        "name": "snp673654",
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 2,
+        "weight": 2,
+      },
+      {
+        "name": "snp263462", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
+        "value": 2,
+        "weight": 4,
+      },
+      {
+        "name": "snp37777", 
+        "type": "snp",
+        "linkcolor": "#f56954",
+        "className" : "Recovery", 
         "value": 1,
         "weight": 9,
       },
@@ -171,9 +381,9 @@ var geneticData = {
 
     var i = 0,
         duration = 750,
-        heightOfVizContainer = 400,
-        widthOfVizContainer = 480,
-        horizontalSpacingConstant = 100,
+        heightOfVizContainer = 800,
+        widthOfVizContainer = 800,
+        horizontalSpacingConstant = 150,
         root,
         maxDepth = 3; //global variable to hold the tree layout data 
 
