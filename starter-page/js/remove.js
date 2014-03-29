@@ -1,15 +1,191 @@
-var margin = {
-    top: 20,
-    right: 120,
-    bottom: 20,
-    left: 120
-},
-width = 960 - margin.right - margin.left,
-    height = 800 - margin.top - margin.bottom;
+/** 
+Variable description
 
-var i = 0,
-    duration = 750,
-    root;
+name is name
+
+class is what category/class of node is it
+
+type is intuitive-category, phenotype or variant/snp
+
+linkcolor is the color of the link/path
+
+value is mainly for snp to have values like 0,1,2 corresponding to no allele, 1 and 2 alleles
+
+weight is out of 10. It might be the rank or the weight of the snp or phenptype or category
+
+**/
+
+var geneticData = {
+ "name": "Performance",
+ "type": "root", 
+ "children": [
+  {
+   "name": "Endurance",
+   "type": "category",
+   "linkcolor": "red",
+   "class" : "endurance",
+   "children": [
+    {
+     "name": "Heart Capacity",
+     "type": "phenotype",
+     "linkcolor": "red",
+     "class" : "endurance",
+     "children": [
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp24234", 
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 1,
+        "weight": 4,
+      },
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 2,
+        "weight": 9,
+      },
+      
+     ]
+    },
+    {
+     "name": "Endurance",
+     "type": "phenotype",
+     "linkcolor": "red",
+     "class" : "endurance",
+     "children": [
+      {
+        "name": "snp673654",
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 2,
+        "weight": 2,
+      },
+      {
+        "name": "snp263462", 
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 2,
+        "weight": 4,
+      },
+      {
+        "name": "snp37777", 
+        "type": "snp",
+        "linkcolor": "red",
+        "class" : "endurance", 
+        "value": 1,
+        "weight": 9,
+      },
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Power",
+   "type": "category",
+   "linkcolor": "green",
+   "class" : "power",
+   "children": [
+    {
+     "name": "Strength",
+     "type": "phenotype",
+     "linkcolor": "green",
+     "class" : "power",
+     "children": [
+      {
+        "name": "snp112341",
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 0,
+        "weight": 8,
+      },
+      {
+        "name": "snp24234", 
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 1,
+        "weight": 4,
+      },
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 2,
+        "weight": 9,
+      },
+      
+     ]
+    },
+    {
+     "name": "Power Capacity",
+     "type": "phenotype",
+     "linkcolor": "green",
+     "class" : "power",
+     "children": [
+      {
+        "name": "snp673654",
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 2,
+        "weight": 2,
+      },
+      {
+        "name": "snp263462", 
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 2,
+        "weight": 4,
+      },
+      {
+        "name": "snp37777", 
+        "type": "snp",
+        "linkcolor": "green",
+        "class" : "power", 
+        "value": 1,
+        "weight": 9,
+      },
+     ]
+    }
+   ]
+  }
+ ]
+};
+
+
+
+    var i = 0,
+        duration = 750,
+        heightOfVizContainer = 400,
+        widthOfVizContainer = 480,
+        horizontalSpacingConstant = 100,
+        root,
+        maxDepth = 3; //global variable to hold the tree layout data 
+
+    var margin = {
+        top: 20,
+        right: 120,
+        bottom: 20,
+        left: 120
+    },
+    width = widthOfVizContainer - margin.right - margin.left,
+    height = heightOfVizContainer - margin.top - margin.bottom;
 
 var tree = d3.layout.tree()
     .size([height, width]);
@@ -19,14 +195,14 @@ var diagonal = d3.svg.diagonal()
     return [d.y, d.x];
 });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".viz").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("/d/4063550/flare.json", function (error, flare) {
-    root = flare;
+
+    root = geneticData;
     root.x0 = height / 2;
     root.y0 = 0;
 
@@ -40,7 +216,7 @@ d3.json("/d/4063550/flare.json", function (error, flare) {
 
     root.children.forEach(collapse);
     update(root);
-});
+
 
 d3.select(self.frameElement).style("height", "800px");
 

@@ -22,36 +22,36 @@ var geneticData = {
   {
    "name": "Endurance",
    "type": "category",
-   "linkcolor": "red",
-   "class" : "endurance",
+   "linkcolor": "#dd2a51",
+   "className" : "endurance",
    "children": [
     {
      "name": "Heart Capacity",
      "type": "phenotype",
-     "linkcolor": "red",
-     "class" : "endurance",
+     "linkcolor": "#dd2a51",
+     "className" : "endurance",
      "children": [
       {
         "name": "snp112341",
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 0,
         "weight": 8,
       },
       {
         "name": "snp24234", 
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 1,
         "weight": 4,
       },
       {
         "name": "snp35243", 
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 2,
         "weight": 9,
       },
@@ -61,30 +61,30 @@ var geneticData = {
     {
      "name": "Endurance",
      "type": "phenotype",
-     "linkcolor": "red",
-     "class" : "endurance",
+     "linkcolor": "#dd2a51",
+     "className" : "endurance",
      "children": [
       {
         "name": "snp673654",
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 2,
         "weight": 2,
       },
       {
         "name": "snp263462", 
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 2,
         "weight": 4,
       },
       {
         "name": "snp37777", 
         "type": "snp",
-        "linkcolor": "red",
-        "class" : "endurance", 
+        "linkcolor": "#dd2a51",
+        "className" : "endurance", 
         "value": 1,
         "weight": 9,
       },
@@ -95,36 +95,36 @@ var geneticData = {
   {
    "name": "Power",
    "type": "category",
-   "linkcolor": "green",
-   "class" : "power",
+   "linkcolor": "#3edd88",
+   "className" : "power",
    "children": [
     {
      "name": "Strength",
      "type": "phenotype",
-     "linkcolor": "green",
-     "class" : "power",
+     "linkcolor": "#3edd88",
+     "className" : "power",
      "children": [
       {
         "name": "snp112341",
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 0,
         "weight": 8,
       },
       {
         "name": "snp24234", 
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 1,
         "weight": 4,
       },
       {
         "name": "snp35243", 
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 2,
         "weight": 9,
       },
@@ -134,30 +134,30 @@ var geneticData = {
     {
      "name": "Power Capacity",
      "type": "phenotype",
-     "linkcolor": "green",
-     "class" : "power",
+     "linkcolor": "#3edd88",
+     "className" : "power",
      "children": [
       {
         "name": "snp673654",
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 2,
         "weight": 2,
       },
       {
         "name": "snp263462", 
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 2,
         "weight": 4,
       },
       {
         "name": "snp37777", 
         "type": "snp",
-        "linkcolor": "green",
-        "class" : "power", 
+        "linkcolor": "#3edd88",
+        "className" : "power", 
         "value": 1,
         "weight": 9,
       },
@@ -167,8 +167,6 @@ var geneticData = {
   }
  ]
 };
-var colors = ["#D5252F", "#E96B38", "#F47337", "#B02D5D", "#9B2C67", "#982B9A", "#692DA7", "#5725AA", "#4823AF"];
-
 
 
     var i = 0,
@@ -186,7 +184,7 @@ var colors = ["#D5252F", "#E96B38", "#F47337", "#B02D5D", "#9B2C67", "#982B9A", 
         left: 120
     },
     width = widthOfVizContainer - margin.right - margin.left,
-        height = heightOfVizContainer - margin.top - margin.bottom;
+    height = heightOfVizContainer - margin.top - margin.bottom;
 
 
 var tree = d3.layout.tree()
@@ -215,10 +213,9 @@ root = geneticData; //assigning the section of the data to start the tree with.
     }
   }
 // to collapse the whole tree to first level uncomment the following.
-  // root.children.forEach(collapse);
+  root.children.forEach(collapse);
   update(root);
-//@nehil why?
-var nodes = tree.nodes(root).reverse();
+
 //@nehil why?console.
 d3.select(self.frameElement).style("height", heightOfVizContainer + "px");
 
@@ -241,7 +238,7 @@ function update(source) {
         .data(nodes, function (d) {
         return d.id || (d.id = ++i);
     });
-    console.log("node",node);
+
     // Enter any new nodes at the parent's previous position.
     var nodeEnter = node.enter().append("g")
         .attr("class", "node")
@@ -309,24 +306,23 @@ function update(source) {
     // Enter any new links at the parent's previous position.
     link.enter().insert("path", "g")
         .attr("class", "link")
-        .attr("class", function(d) {  
-          return d.target.class;
-        })
         .style('stroke-opacity', function(d) {
           console.log(d.source.depth+1);
           return ((1/maxDepth) * (d.source.depth+1));
         })
         .attr("d", function (d) {
-            console.log(d);
             var o = {
-            x: source.x0,
-            y: source.y0
-        };
-        return diagonal({
-            source: o,
-            target: o
+            x: d.source.x0,
+            y: d.source.y0
+            };
+            return diagonal({
+                source: o,
+                target: o
+            });
+        })
+        .style("stroke", function(d) {
+          return d.target.linkcolor;
         });
-    });
 
     // Transition links to their new position.
     link.transition()

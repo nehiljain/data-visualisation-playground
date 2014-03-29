@@ -30,12 +30,16 @@ body {
 }
 
 svg path.link {
+	stroke: #020001;
+    stroke-width: 15.510118932025104px;
+	stroke-linecap: round;
+	fill: none;
+    
 
-    fill: none;
-    stroke: #020001;
-    stroke-width: 1.5px;
 
 }
+
+/** might be used later**/
 
 
 svg path.endurance {
