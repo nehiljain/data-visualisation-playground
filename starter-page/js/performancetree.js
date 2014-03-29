@@ -37,7 +37,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp24234", 
@@ -45,7 +45,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp35243", 
@@ -53,9 +53,16 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "weight": 9,
+        "weight": 9
       },
-      
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "#00a65a",
+        "className" : "endurance", 
+        "value": 2,
+        "weight": 9
+      }
      ]
     },
     {
@@ -70,7 +77,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "weight": 2,
+        "weight": 2
       },
       {
         "name": "snp263462", 
@@ -78,7 +85,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp37777", 
@@ -86,8 +93,16 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
-        "weight": 9,
+        "weight": 9
       },
+      {
+        "name": "snp35243", 
+        "type": "snp",
+        "linkcolor": "#00a65a",
+        "className" : "endurance", 
+        "value": 2,
+        "weight": 9
+      }
      ]
     }
    ]
@@ -110,7 +125,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp24234", 
@@ -118,7 +133,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 1,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp35243", 
@@ -126,8 +141,8 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
-        "weight": 9,
-      },
+        "weight": 9
+      }
       
      ]
     },
@@ -143,7 +158,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
-        "weight": 2,
+        "weight": 2
       },
       {
         "name": "snp263462", 
@@ -151,7 +166,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp37777", 
@@ -159,8 +174,8 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 1,
-        "weight": 9,
-      },
+        "weight": 9
+      }
      ]
     }
    ]
@@ -183,7 +198,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp112341",
@@ -191,7 +206,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp112341",
@@ -199,7 +214,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp24234", 
@@ -207,7 +222,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 1,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp35243", 
@@ -215,8 +230,8 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
-        "weight": 9,
-      },
+        "weight": 9
+      }
       
      ]
     },
@@ -232,7 +247,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
-        "weight": 2,
+        "weight": 2
       },
       {
         "name": "snp263462", 
@@ -240,7 +255,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp37777", 
@@ -248,8 +263,8 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 1,
-        "weight": 9,
-      },
+        "weight": 9
+      }
      ]
     }
    ]
@@ -272,7 +287,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp112341",
@@ -280,7 +295,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp112341",
@@ -288,7 +303,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
-        "weight": 8,
+        "weight": 8
       },
       {
         "name": "snp24234", 
@@ -296,7 +311,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp35243", 
@@ -304,8 +319,8 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
-        "weight": 9,
-      },
+        "weight": 9
+      }
       
      ]
     },
@@ -321,7 +336,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
-        "weight": 2,
+        "weight": 2
       },
       {
         "name": "snp263462", 
@@ -329,7 +344,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp37777", 
@@ -337,8 +352,8 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
-        "weight": 9,
-      },
+        "weight": 9
+      }
      ]
     },
     {
@@ -353,7 +368,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
-        "weight": 2,
+        "weight": 2
       },
       {
         "name": "snp263462", 
@@ -361,7 +376,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
-        "weight": 4,
+        "weight": 4
       },
       {
         "name": "snp37777", 
@@ -369,8 +384,8 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
-        "weight": 9,
-      },
+        "weight": 9
+      }
      ]
     }
    ]
