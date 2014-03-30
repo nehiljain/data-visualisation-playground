@@ -411,6 +411,10 @@ var geneticData = {
     width = widthOfVizContainer - margin.right - margin.left,
     height = heightOfVizContainer - margin.top - margin.bottom;
 
+//the array of colors for the snps with values 0,1,2 in the that order
+var snpColors = ["#3DD8FF","#4DFF00","#FF3300"];
+
+var toolTip = d3.select(document.getElementById("infodiv"));
 
 var tree = d3.layout.tree()
     .size([height, width]);
@@ -476,8 +480,20 @@ function update(source) {
         .attr("r", 1e-6)
         .style("stroke", function(d) { return d.linkcolor;})
         .style("fill", function (d) {
-        return d._children ? d.linkcolor : "#fff";
-    });
+          if (d.type === "snp") {
+
+            return snpColors[d.value];
+          }
+          else if (d.type !== "snp"){
+            
+            return d._children ? d.linkcolor : "#fff";
+          }
+        
+        })
+        .on("click", function (d) {
+            //calling the function to create the tooptip
+            node_onClick(d);
+        });
 
     nodeEnter.append("text")
         .attr("x", function (d) {
@@ -491,8 +507,25 @@ function update(source) {
         .text(function (d) {
         return d.name;
     })
-        .style("fill-opacity", 1e-6);
+        .style("fill-opacity", 1e-6)
+        .on("click", function (d) {
+            //calling the function to create the tooptip
+            node_onClick(d);
+        });
 
+    function node_onClick(d) {
+        if (d.type === "snp") {
+          d3.select("#infodiv h3").text("Variant Name: "+d.name);
+          
+          d3.select("#infodiv")
+            .classed("hidden", false)
+            .style("left", (d3.event.pageX+15) + "px")
+            .style("top", (d3.event.pageY-75) + "px");
+
+          console.log("came inside the onclick method", d);
+        }
+        
+    }
     // Transition nodes to their new position.
     var nodeUpdate = node.transition()
         .duration(duration)
@@ -501,9 +534,22 @@ function update(source) {
     });
 
     nodeUpdate.select("circle")
-        .attr("r", 4.5)
+        .attr("r", function (d) {
+          if (d.type === "snp") {
+            //@nehil scaling required
+              return (2 * d.weight);
+          }
+          else if (d.type !== "snp"){
+              return 5;
+          }
+        })
         .style("fill", function (d) {
-        return d._children ? d.linkcolor : "#fff";
+        if (d.type === "snp") {
+            return snpColors[d.value];
+        }
+        else if (d.type !== "snp"){
+            return d._children ? d.linkcolor : "#fff";
+        }
     });
 
     nodeUpdate.select("text")
@@ -533,7 +579,6 @@ function update(source) {
     link.enter().insert("path", "g")
         .attr("class", "link")
         .style('stroke-opacity', function(d) {
-          console.log(d.source.depth+1);
           return ((1/maxDepth) * (d.source.depth+1));
         })
         .attr("d", function (d) {
