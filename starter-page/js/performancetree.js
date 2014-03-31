@@ -400,6 +400,7 @@ var geneticData = {
         widthOfVizContainer = 800,
         horizontalSpacingConstant = 150,
         root,
+        showInfoDiv = false,
         maxDepth = 3; //global variable to hold the tree layout data 
 
     var margin = {
@@ -412,7 +413,7 @@ var geneticData = {
     height = heightOfVizContainer - margin.top - margin.bottom;
 
 //the array of colors for the snps with values 0,1,2 in the that order
-var snpColors = ["#3DD8FF","#4DFF00","#FF3300"];
+var snpColors = ["#F0F0F0","#A3A3A3","#030303"];
 
 var toolTip = d3.select(document.getElementById("infodiv"));
 
@@ -490,10 +491,15 @@ function update(source) {
           }
         
         })
-        .on("click", function (d) {
+        .on("mouseover", function (d) {
             //calling the function to create the tooptip
             node_onClick(d);
-        });
+        })
+        .on("mouseout", function(d) {
+          d3.select("#infodiv")
+            .transition()                 // declare the transition properties to fade-out the div
+            .duration(1500)                  // it shall take 500ms
+            .attr("class","hidden"); });
 
     nodeEnter.append("text")
         .attr("x", function (d) {
