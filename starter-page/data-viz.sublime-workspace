@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"infodiv"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
 				"fun",
 				"function"
 			],
@@ -60,10 +68,6 @@
 				"width"
 			],
 			[
-				"in",
-				"inline-block"
-			],
-			[
 				"da",
 				"dataset"
 			]
@@ -75,7 +79,7 @@
 			"file": "css/starter-template.css",
 			"settings":
 			{
-				"buffer_size": 637,
+				"buffer_size": 2462,
 				"line_ending": "Unix"
 			}
 		},
@@ -83,7 +87,15 @@
 			"file": "performancetree.html",
 			"settings":
 			{
-				"buffer_size": 1909,
+				"buffer_size": 2374,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "performancechip.html",
+			"settings":
+			{
+				"buffer_size": 2374,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,15 +103,7 @@
 			"file": "js/performancetree.js",
 			"settings":
 			{
-				"buffer_size": 13435,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
-			"settings":
-			{
-				"buffer_size": 370,
+				"buffer_size": 15071,
 				"line_ending": "Unix"
 			}
 		},
@@ -112,10 +116,10 @@
 			}
 		},
 		{
-			"contents": "  {\n   \"name\": \"Recovery\",\n   \"type\": \"category\",\n   \"linkcolor\": \"#f56954\",\n   \"className\" : \"Recovery\",\n   \"children\": [\n    {\n     \"name\": \"Recovery\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp24234\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp35243\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 9,\n      },\n      \n     ]\n    },\n    {\n     \"name\": \"Muscle Fatigue\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp673654\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 2,\n      },\n      {\n        \"name\": \"snp263462\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp37777\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 9,\n      },\n     ]\n    },\n    {\n     \"name\": \"Lung Capacity\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp673654\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 2,\n      },\n      {\n        \"name\": \"snp263462\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp37777\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 9,\n      },\n     ]\n    }\n   ]\n  }",
+			"contents": "\n\ndiv.tooltip {\n    position: absolute;     /* reference for measurement */\n    text-align: left;\n    pointer-events: none;     /* 'none' tells the mouse to ignore the rectangle */\n    background: #FFFFEF;\n    width: 400px;\n    height: 165px;\n    padding: 10px;\n    border: 1px solid #D5D5D5;\n    font-family: arial,helvetica,sans-serif;\n    position: absolute;\n    font-size: 1.1em;\n    color: #333;\n    padding: 10px;\n    border-radius: 3px;\n    background: rgba(255,255,255,0.9);\n    color: #000;\n    box-shadow: 0 1px 5px rgba(0,0,0,0.4);\n    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);\n    border:1px solid rgba(200,200,200,0.85);\n}\n\ndiv.tooltipTail {\n    position: absolute;\n    left:-7px;\n    top: 72px;\n    width: 7px;\n    height: 13px;\n    background: url(\"images/tail_white.png\") 50% 0%;\n}\n\ndiv.toolTipBody {\n    position:absolute;\n    height:100px;\n    width:230px;\n}\n\ndiv.header {\n    text-transform: uppercase;\n    text-align: left;\n    font-size: 14px;\n    margin-bottom: 2px;\n    color:#666;\n    text-align:center;\n\n}\n\ndiv.header-rule{\n    height:1px;\n    margin:1px auto 3px;\n    margin-top:7px;\n    margin-bottom:7px;\n    background:#ddd;\n    width:125px;\n}\n\ndiv.header1{\n    text-transform: uppercase;\n    text-align: left;\n    font-size: 12px;\n    margin-bottom: 2px;\n    color:#333;\n    text-align:center;\n}\n\ndiv.header2{\n    color:#000;\n    /*   text-transform:uppercase;*/\n    font-size: 11px;\n    text-align:center;\n    font-style:italic;\n}\n\ndiv.header3 {\n    text-align: left;\n    font-size: 11px;\n    /*  width:170px;*/\n    text-align:center;\n}\n\ndiv.header4 {\n    /*  position:absolute;*/\n    text-align:center;\n    right:10px;\n    top:28px;\n    font-size: 16px;\n    /*  width:100px;*/\n    text-align:center;\n    overflow:hidden;\n    font-weight:bold;\n}\n\n/* Navigation */\n.nytg-navBar {\n    border-top: solid 1px #DDD;\n    padding: 15px 0 0;\n    margin: 0 10px;\n    z-index: 100;\n    position: absolute;\n    width: 950px;\n}\n\n\n.nytg-navigation {\n\n}\n.nytg-navigation li {\n    color: #999;\n    font-size: 14px;\n    cursor: pointer;\n    float: left;\n    padding: 10px 18px;\n    border-top: solid 1px #CCC;\n    border-bottom: solid 1px #CCC;\n    border-left: solid 1px #CCC;\n    background: #f9f9f9;\n    margin: 0 0;\n}\n\n.nytg-navigation li:first-of-type{\n    border-radius: 4px 0 0 4px;\n}\n.nytg-navigation li:last-of-type{\n\n    border-right: solid 1px #CCC;\n    border-radius: 0 4px 4px 0;\n}\n.nytg-navigation li.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n}\n\n.nytg-navigation li.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n}\n\ndiv.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n    padding-bottom:10px;\n}\n\n\n",
 			"settings":
 			{
-				"buffer_size": 2547,
+				"buffer_size": 2875,
 				"line_ending": "Unix"
 			}
 		}
@@ -168,6 +172,7 @@
 	},
 	"file_history":
 	[
+		"/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/remove.js",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/21_each.html",
@@ -187,7 +192,7 @@
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -201,6 +206,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"infodi",
+			"cons",
+			"toolTip",
+			"tooltip",
+			"none",
+			"tooltip",
+			"div",
 			"\"weight\"",
 			"\"weight\":",
 			"\"weight\"",
@@ -241,7 +253,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 637,
+						"buffer_size": 2462,
 						"regions":
 						{
 						},
@@ -249,7 +261,7 @@
 						[
 							[
 								0,
-								637
+								2462
 							]
 						],
 						"settings":
@@ -304,27 +316,104 @@
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "performancetree.html",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1909,
+						"buffer_size": 2374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1377,
-								1416
+								1270,
+								1270
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 137.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "performancechip.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -384,24 +473,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/performancetree.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13435,
+						"buffer_size": 15071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								500,
-								500
+								10981,
+								10981
 							]
 						],
 						"settings":
@@ -458,85 +547,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								289,
-								289
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -551,8 +565,8 @@
 						"selection":
 						[
 							[
-								5402,
-								5402
+								13479,
+								13691
 							]
 						],
 						"settings":
@@ -602,15 +616,17 @@
 								"bh_double_quote_close"
 							],
 							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5453.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -618,7 +634,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2547,
+						"buffer_size": 2875,
 						"regions":
 						{
 						},
@@ -626,7 +642,7 @@
 						[
 							[
 								0,
-								2547
+								879
 							]
 						],
 						"settings":
@@ -676,15 +692,17 @@
 								"bh_double_quote_close"
 							],
 							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 295.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

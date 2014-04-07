@@ -37,6 +37,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -45,6 +46,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
+        "size": 2,
         "weight": 4
       },
       {
@@ -53,6 +55,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 2,
         "weight": 9
       },
       {
@@ -61,6 +64,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 2,
         "weight": 9
       }
      ]
@@ -77,6 +81,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 2,
         "weight": 2
       },
       {
@@ -85,6 +90,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 2,
         "weight": 4
       },
       {
@@ -93,6 +99,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
+        "size": 2,
         "weight": 9
       },
       {
@@ -101,6 +108,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 2,
         "weight": 9
       }
      ]
@@ -125,6 +133,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -133,6 +142,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 1,
+        "size": 2,
         "weight": 4
       },
       {
@@ -141,6 +151,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
+        "size": 2,
         "weight": 9
       }
       
@@ -158,6 +169,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
+        "size": 2,
         "weight": 2
       },
       {
@@ -166,6 +178,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 2,
+        "size": 2,
         "weight": 4
       },
       {
@@ -174,6 +187,7 @@ var geneticData = {
         "linkcolor": "#00c0ef",
         "className" : "power", 
         "value": 1,
+        "size": 2,
         "weight": 9
       }
      ]
@@ -198,6 +212,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -206,6 +221,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -214,6 +230,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -222,6 +239,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 1,
+        "size": 2,
         "weight": 4
       },
       {
@@ -230,6 +248,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
+        "size": 2,
         "weight": 9
       }
       
@@ -247,6 +266,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
+        "size": 2,
         "weight": 2
       },
       {
@@ -255,6 +275,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 2,
+        "size": 2,
         "weight": 4
       },
       {
@@ -263,6 +284,7 @@ var geneticData = {
         "linkcolor": "#0073b7",
         "className" : "Metabolism", 
         "value": 1,
+        "size": 2,
         "weight": 9
       }
      ]
@@ -287,6 +309,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -295,6 +318,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -303,6 +327,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 0,
+        "size": 2,
         "weight": 8
       },
       {
@@ -311,6 +336,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
+        "size": 2,
         "weight": 4
       },
       {
@@ -319,6 +345,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
+        "size": 2,
         "weight": 9
       }
       
@@ -336,6 +363,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
+        "size": 2,
         "weight": 2
       },
       {
@@ -344,6 +372,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
+        "size": 2,
         "weight": 4
       },
       {
@@ -352,6 +381,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
+        "size": 2,
         "weight": 9
       }
      ]
@@ -368,6 +398,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
+        "size": 2,
         "weight": 2
       },
       {
@@ -376,6 +407,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 2,
+        "size": 2,
         "weight": 4
       },
       {
@@ -384,6 +416,7 @@ var geneticData = {
         "linkcolor": "#f56954",
         "className" : "Recovery", 
         "value": 1,
+        "size": 2,
         "weight": 9
       }
      ]
