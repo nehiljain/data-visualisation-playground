@@ -18,32 +18,32 @@ var geneticData = {
      "className" : "endurance",
      "children": [
       {
-        "name": "snp112341",
-        "type": "snp",
+        "name": "Gene 112341",
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 0,
         "size": 8
       },
       {
-        "name": "snp24234", 
-        "type": "snp",
+        "name": "Gene 24234", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
         "size": 4
       },
       {
-        "name": "snp35243", 
-        "type": "snp",
+        "name": "Gene 35243", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "size": 9
       },
       {
-        "name": "snp35243", 
-        "type": "snp",
+        "name": "Gene 35243", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
@@ -58,35 +58,318 @@ var geneticData = {
      "className" : "endurance",
      "children": [
       {
-        "name": "snp673654",
-        "type": "snp",
+        "name": "Gene 673654",
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "size": 2
       },
       {
-        "name": "snp263462", 
-        "type": "snp",
+        "name": "Gene 263462", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
         "size": 4
       },
       {
-        "name": "snp37777", 
-        "type": "snp",
+        "name": "Gene 37777", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
         "size": 9
       },
       {
-        "name": "snp35243", 
-        "type": "snp",
+        "name": "Gene 35243", 
+        "type": "Gene ",
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
+        "size": 9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Power",
+   "type": "category",
+   "linkcolor": "#00c0ef",
+   "className" : "power",
+   "children": [
+    {
+     "name": "Strength",
+     "type": "phenotype",
+     "linkcolor": "#00c0ef",
+     "className" : "power",
+     "children": [
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 24234", 
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 1,
+        "size": 4
+      },
+      {
+        "name": "Gene 35243", 
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 2,
+        "size": 9
+      }
+      
+     ]
+    },
+    {
+     "name": "Power Capacity",
+     "type": "phenotype",
+     "linkcolor": "#00c0ef",
+     "className" : "power",
+     "children": [
+      {
+        "name": "Gene 673654",
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 2,
+        "size": 2
+      },
+      {
+        "name": "Gene 263462", 
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 2,
+        "size": 4
+      },
+      {
+        "name": "Gene 37777", 
+        "type": "Gene ",
+        "linkcolor": "#00c0ef",
+        "className" : "power", 
+        "value": 1,
+        "size": 9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Metabolism",
+   "type": "category",
+   "linkcolor": "#0073b7",
+   "className" : "metabolism",
+   "children": [
+    {
+     "name": "Energy",
+     "type": "phenotype",
+     "linkcolor": "#0073b7",
+     "className" : "metabolism",
+     "children": [
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 24234", 
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 1,
+        "size": 4
+      },
+      {
+        "name": "Gene 35243", 
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 2,
+        "size": 9
+      }
+      
+     ]
+    },
+    {
+     "name": "Propensity to Exercise",
+     "type": "phenotype",
+     "linkcolor": "#0073b7",
+     "className" : "metabolism",
+     "children": [
+      {
+        "name": "Gene 673654",
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 2,
+        "size": 2
+      },
+      {
+        "name": "Gene 263462", 
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 2,
+        "size": 4
+      },
+      {
+        "name": "Gene 37777", 
+        "type": "Gene ",
+        "linkcolor": "#0073b7",
+        "className" : "metabolism", 
+        "value": 1,
+        "size": 9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Recovery",
+   "type": "category",
+   "linkcolor": "#f56954",
+   "className" : "recovery",
+   "children": [
+    {
+     "name": "Recovery",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "recovery",
+     "children": [
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 112341",
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 0,
+        "size": 8
+      },
+      {
+        "name": "Gene 24234", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 1,
+        "size": 4
+      },
+      {
+        "name": "Gene 35243", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 2,
+        "size": 9
+      }
+      
+     ]
+    },
+    {
+     "name": "Muscle Fatigue",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "recovery",
+     "children": [
+      {
+        "name": "Gene 673654",
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 2,
+        "size": 2
+      },
+      {
+        "name": "Gene 263462", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 2,
+        "size": 4
+      },
+      {
+        "name": "Gene 37777", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 1,
+        "size": 9
+      }
+     ]
+    },
+    {
+     "name": "Lung Capacity",
+     "type": "phenotype",
+     "linkcolor": "#f56954",
+     "className" : "recovery",
+     "children": [
+      {
+        "name": "Gene 673654",
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 2,
+        "size": 2
+      },
+      {
+        "name": "Gene 263462", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 2,
+        "size": 4
+      },
+      {
+        "name": "Gene 37777", 
+        "type": "Gene ",
+        "linkcolor": "#f56954",
+        "className" : "recovery", 
+        "value": 1,
         "size": 9
       }
      ]
@@ -96,14 +379,32 @@ var geneticData = {
  ]
 };
 
-
-var w = 1280 - 80,
-    h = 800 - 180,
+var w = 180 - 80,
+    h = 240 - 180,
     x = d3.scale.linear().range([0, w]),
     y = d3.scale.linear().range([0, h]),
-    color = d3.scale.category20c(),
     root,
     node;
+
+// Has the color mapping for different categories Using color brewer
+
+
+var color = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.YlOrRd[3]);
+var enduranceColor = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.Greens[3]);
+var powerColor = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.Purples[3]);
+var metabolismColor = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.YlOrRd[3]);
+var recoveryColor = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.Blues[3]);
+
 
 var treemap = d3.layout.treemap()
     .round(false)
@@ -150,7 +451,19 @@ cell.append("svg:rect")
     return d.dy - 1;
 })
     .style("fill", function (d) {
-    return color(d.parent.name);
+      if (d.className == "endurance") {
+        return enduranceColor(d.value);
+      }
+      if (d.className == "power") {
+        return powerColor(d.value);
+      }
+      if (d.className == "metabolism") {
+        return metabolismColor(d.value);
+      }
+      if (d.className == "recovery") {
+        return recoveryColor(d.value);
+      }
+    return color(d.value);
 });
 
 cell.append("svg:text")
