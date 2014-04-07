@@ -1,3 +1,6 @@
+//weight is mapped to size in d3js
+
+
 var geneticData = {
  "name": "Performance",
  "type": "root", 
@@ -20,8 +23,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 0,
-        "size": 2,
-        "weight": 8
+        "size": 8
       },
       {
         "name": "snp24234", 
@@ -29,8 +31,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
-        "size": 2,
-        "weight": 4
+        "size": 4
       },
       {
         "name": "snp35243", 
@@ -38,8 +39,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "size": 2,
-        "weight": 9
+        "size": 9
       },
       {
         "name": "snp35243", 
@@ -47,8 +47,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "size": 2,
-        "weight": 9
+        "size": 9
       }
      ]
     },
@@ -64,8 +63,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "size": 2,
-        "weight": 2
+        "size": 2
       },
       {
         "name": "snp263462", 
@@ -73,8 +71,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "size": 2,
-        "weight": 4
+        "size": 4
       },
       {
         "name": "snp37777", 
@@ -82,8 +79,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 1,
-        "size": 2,
-        "weight": 9
+        "size": 9
       },
       {
         "name": "snp35243", 
@@ -91,8 +87,7 @@ var geneticData = {
         "linkcolor": "#00a65a",
         "className" : "endurance", 
         "value": 2,
-        "size": 2,
-        "weight": 9
+        "size": 9
       }
      ]
     }
