@@ -120,6 +120,18 @@ root.children.forEach(collapse);
 
 <p>Now we attach the data with to the root element and set the x,y positions of the root node. Further, collapse the nodes with children. </p>
 
+<pre><code>// Compute the new tree layout.
+var nodes = tree.nodes(root).reverse(),
+    links = tree.links(nodes);
+nodes.forEach(function (d) {
+    d.y = d.depth * horizontalSpacingConstant;
+
+});
+</code></pre>
+
+<p>In the update function, the nodes and the links are calculated. Then the y positions are normalised for the fixed depth of the canvas. </p>
+
+
 <hr>
 
 <blockquote>
