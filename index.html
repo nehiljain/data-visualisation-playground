@@ -31,34 +31,105 @@
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<h1 id="treemap-explained">TreeMap explained</h1>
 
-<pre><code>$ git clone data-visualisation-playground.git
-$ git fetch origin
-$ git checkout gh-pages
+<h2 id="introduction">Introduction</h2>
+
+<p>I have been developing my know how in data analysis more so in data visualization specifically. This is my first attempt to help those beginning out there with D3 or R to understand how they can display there hierarchical data. The end result of the post will be <strong>image</strong> from R and <strong>demo</strong> from D3 js. I am assuming that the reader is familiar with what is R and what is D3. If not you can refer to <strong>ref1</strong> and <strong>ref2</strong> respectively. </p>
+
+<p>I have watched the video lectures on Visualization in the <strong>Introduction to Data Science course at Coursera</strong>. I am in the process of working on the Data Visualisation course by <strong>Harward dedicated specifically to D3 and Data Visualization</strong>. To get quickly started with <strong>D3 scott’s book</strong> is amazing.</p>
+
+<h2 id="data">Data</h2>
+
+<p>The data that I am going to visualize looks like this.</p>
+
+<p><strong>post data head here</strong></p>
+
+<p>This data is hypothetical data of performance genes in humans. The root is performance which can depend of higher level categories like endurance, recovery, power etc. These categories are combination of different traits like muscle fatigue, heart capacity, propensity to exercise etc. These traits are effected by some genes of the person. These genes can have different states based on the DNA of the person. These states are low, mid, high or (1,2,3). The treemap we are going to make will show a overall picture of the genetic performance of the person.</p>
+
+<h2 id="data-visualization">Data Visualization</h2>
+
+<p>The mapping of the variables in the data to the visual attributes is shown below. This is designed by me, which means that there might be better ways to attack this problem. Please write your feedback in the comments.</p>
+
+<h2 id="r-code">R Code</h2>
+
+<h3 id="limitation">Limitation</h3>
+
+<p>There are two color mappings. Category(Nominal) is mapped to Color Hue. Gene value is mapped to Color Value.</p>
+
+<hr>
+
+<h2 id="d3-code">D3 Code</h2>
+
+<pre><code>var w = 900 - 80,
+    h = 700 - 180,
+    x = d3.scale.linear().range([0, w]),
+    y = d3.scale.linear().range([0, h]),
+    root,
+    node;
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>This is setup of the canvas and the global variables. <strong>root</strong> is used to hold the data. A treemap is a visualization which optimizes the arrangement and the sizes of different tiles within it based on the available space. The x and y above are scaling functions which map the input based on the width and height of the canvas created. </p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code>var color = d3.scale.ordinal()
+  .domain([1,2,3])
+  .range(colorbrewer.YlOrRd[3]);
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>This is a function to create an ordinal scale which map 1,2,3 values to  <br>
+3 color values of the colorbrewer sequence palette - <strong>YlOrRd</strong>. You can view all the palettes available <a href="http://bl.ocks.org/mbostock/5577023">here</a>. </p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<pre><code>var treemap = d3.layout.treemap()
+                .round(true)
+                .size([w, h])
+                .sticky(true)
+                .value(function (d) {
+                    return d.size;
+                });
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>All the functions above should be read in detail in the documentation. The overview is that here, we create a new default treemap layout. This layout will round the dimensions to exact pixel boundaries. </p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<pre><code>var diagonal = d3.svg.diagonal()
+    .projection(function (d) {
+    return [d.y, d.x];
+});
+</code></pre>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>The diagonal is a path generator function which returns a path between source and target points.</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<pre><code>var svg = d3.select(".viz").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")" );
+</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Here we setup the svg element in the dom by selecting the .viz element and adding a svg with height and width. Then it appends a g element which is used to group svg elements. </p>
+
+<pre><code>root = geneticData; //assigning the section of the data to start the tree with.
+root.x0 = height / 2;
+root.y0 = 0;
+
+function collapse(d) {
+  if (d.children) {
+    d._children = d.children;
+    d._children.forEach(collapse);
+    d.children = null;
+  }
+}
+root.children.forEach(collapse);
+</code></pre>
+
+<p>Now we attach the data with to the root element and set the x,y positions of the root node. Further, collapse the nodes with children. </p>
+
+<hr>
+
+<blockquote>
+  <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+
+
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/nehiljain">nehiljain</a></p>

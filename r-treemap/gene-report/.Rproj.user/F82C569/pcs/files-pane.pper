@@ -1,0 +1,9 @@
+{
+    "path" : "~/coderepo/data-visualisation-playground/r-treemap/gene-report",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

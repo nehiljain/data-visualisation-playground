@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1396862802721.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FECF3D24",
+    "lastKnownWriteTime" : 399431958528,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "newData",
+        "contentUrl" : "content?title=newData&file=12b041928cf146a7be43878ce04e3143.htm",
+        "displayedObservations" : "104",
+        "displayedVariables" : 6,
+        "totalObservations" : "104",
+        "variables" : "6"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
