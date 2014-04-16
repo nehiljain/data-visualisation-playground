@@ -465,16 +465,16 @@ var svg = d3.select(".viz").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 root = geneticData; //assigning the section of the data to start the tree with.
-  root.x0 = height / 2;
-  root.y0 = 0;
+root.x0 = height / 2;
+root.y0 = 0;
 
-  function collapse(d) {
-    if (d.children) {
-      d._children = d.children;
-      d._children.forEach(collapse);
-      d.children = null;
-    }
+function collapse(d) {
+  if (d.children) {
+    d._children = d.children;
+    d._children.forEach(collapse);
+    d.children = null;
   }
+}
 // to collapse the whole tree to first level uncomment the following.
   root.children.forEach(collapse);
   update(root);

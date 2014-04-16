@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"r",
+				"root"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"ne",
+				"nested_data"
+			],
+			[
+				"me",
+				"metabolismColor"
+			],
+			[
+				"reco",
+				"recoveryColor"
+			],
+			[
+				"power",
+				"powerColor"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"color",
+				"colorbrewer"
+			],
+			[
 				"in",
 				"infodiv"
 			],
@@ -76,50 +116,58 @@
 	"buffers":
 	[
 		{
-			"file": "css/starter-template.css",
+			"file": "js/performancechip_v2.js",
 			"settings":
 			{
-				"buffer_size": 2462,
+				"buffer_size": 4645,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "performancetree.html",
+			"file": "data.html",
 			"settings":
 			{
-				"buffer_size": 2374,
+				"buffer_size": 2885,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "performancechip.html",
+			"file": "data/sm_chip.csv",
 			"settings":
 			{
-				"buffer_size": 2374,
+				"buffer_size": 2886,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/performancetree.js",
+			"file": "performancechip_v2.html",
 			"settings":
 			{
-				"buffer_size": 15071,
+				"buffer_size": 2407,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n<!DOCTYPE html><head>\n    <meta HTTP-EQUIV=\"X-UA-COMPATIBLE\" CONTENT=\"IE=EmulateIE9\" >\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Federal Budget Data Visualization D3.js</title>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"style.css\">\n    <script type=\"text/javascript\" src=\"scripts/d3.js\"></script>\n\n    <script src=\"http://www.google-analytics.com/urchin.js\" type=\"text/javascript\">\n    </script>\n    <script type=\"text/javascript\">\n        _uacct = \"UA-173014-2\";\n        urchinTracker();\n    </script>\n\n</head>\n<style>\n    a:hover {\n        font-weight:bold;\n        color:#000000;\n    }\n</style>\n<body style=\"height:900px; width:1280px; overflow:auto\">\n\n<div class=\"nytg-navBar\" style=\"left:20px;\">\n    <ul class=\"nytg-navigation clearfix\" style=\"list-style-type:none\">\n        <li id=\"federalButton\" class=\"selected\">Federal</li>\n        <li id=\"stateButton\">State</li>\n        <li id=\"localButton\">Local</li>\n    </ul>\n</div>\n\n\n<div id=\"footer\" style=\"position:absolute; right:20px; top:15px;\">\n    2013 Federal Budget\n    <div class=\"hint\" style=\"font-style:italic\">\n        click on a circle for a more granular view.<br>\n        click on \"Federal\", \"State\", or \"Local\" buttons to see spending at those levels.\n        <br><br>\n        <div style=\"color:#000; font-style:normal\">\n        Design and Engineering: <a href=\"http://www.brightpointinc.com/project-list/\" title=\"BrightPoint Consulting, Inc.\">www.brightpointinc.com</a>\n        </div>\n    </div>\n</div>\n\n\n<div id=\"body\" style=\"position: absolute; top:80px\">\n\n<div id=\"toolTip\" class=\"tooltip\" style=\"opacity:0;\">\n    <div id=\"head\" class=\"header\"></div>\n    <div id=\"header1\" class=\"header1\"></div>\n    <div id=\"header2\" class=\"header2\"></div>\n    <div style=\"position:absolute; left:10px\">\n        <div id=\"federalDiv\" style=\"width:135px; left:0px; top:10px; position: absolute;\" class=\"selected\">\n            <div class=\"header3\"><br>Federal Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"fedSpend\" class=\"header4\"></div>\n        </div>\n        <div id=\"stateDiv\" style=\"width:125px; left:140px; top:10px; position: absolute;\">\n            <div class=\"header3\"><br>State Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"stateSpend\" class=\"header4\"></div>\n        </div>\n        <div id=\"localDiv\" style=\"width:125px; left:272px; top:10px; position: absolute;\">\n            <div class=\"header3\"><br>Local Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"localSpend\" class=\"header4\"></div>\n        </div>\n    </div>\n    <div  class=\"tooltipTail\"></div>\n</div>\n\n <script type=\"text/javascript\">\n\n    var m = [20, 120, 20, 120],\n            w = 1280 - m[1] - m[3],\n            h = 900 - m[0] - m[2],\n            i = 0,\n            root = {};\n\n    var spendField=\"sum_Federal\";\n    var actField=\"sum_Federal\";\n    var sumFields=[\"Federal\",\"GovXFer\",\"State\",\"Local\"];\n    var sourceFields=[\"Category\",\"Level1\",\"Level2\",\"Level3\",\"Level4\"];\n\n\n    var colors = [\"#bd0026\",\"#fecc5c\", \"#fd8d3c\", \"#f03b20\", \"#B02D5D\",\n        \"#9B2C67\", \"#982B9A\", \"#692DA7\", \"#5725AA\", \"#4823AF\",\n        \"#d7b5d8\",\"#dd1c77\",\"#5A0C7A\",\"#5A0C7A\"];\n\n    /*\n    var colors = [\"#D5252F\", \"#E96B38\", \"#F47337\", \"#B02D5D\",\n        \"#9B2C67\", \"#982B9A\", \"#692DA7\", \"#5725AA\", \"#4823AF\",\n        \"#d7b5d8\",\" #df65b0\",\"#dd1c77\",\"#980043\"];\n    */\n    var formatNumber = d3.format(\",.3f\");\n    var formatCurrency = function(d) { return \"$\" + formatNumber(d) + \" Billion\" };\n\n    var tree = d3.layout.tree();\n\n          tree.children(function (d) { return d.values; });\n          tree.size([h, w]);\n\n\n    var toolTip = d3.select(document.getElementById(\"toolTip\"));\n    var header = d3.select(document.getElementById(\"head\"));\n    var header1 = d3.select(document.getElementById(\"header1\"));\n    var header2 = d3.select(document.getElementById(\"header2\"));\n\n    var fedSpend = d3.select(document.getElementById(\"fedSpend\"));\n\n    var stateSpend = d3.select(document.getElementById(\"stateSpend\"));\n\n    var localSpend = d3.select(document.getElementById(\"localSpend\"));\n\n    var federalButton=d3.select(document.getElementById(\"federalButton\"));\n    var stateButton=d3.select(document.getElementById(\"stateButton\"));\n    var localButton=d3.select(document.getElementById(\"localButton\"));\n    var federalDiv=d3.select(document.getElementById(\"federalDiv\"));\n    var stateDiv=d3.select(document.getElementById(\"stateDiv\"));\n    var localDiv=d3.select(document.getElementById(\"localDiv\"));\n\n\n    var diagonal = d3.svg.diagonal()\n            .projection(function(d) { return [d.y, d.x]; });\n\n    var vis = d3.select(\"#body\").append(\"svg:svg\")\n            .attr(\"width\", w + m[1] + m[3])\n            .attr(\"height\", h + m[0] + m[2])\n            .append(\"svg:g\")\n            .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\n    var level1Max={};\n    var level2Max={};\n    var level3Max={};\n    var level4Max={};\n\n    var level1Radius;\n    var level2Radius;\n    var level3Radius;\n    var level4Radius;\n\n    var alreadySummed=false;\n\n\n//http://www.usgovernmentspending.com/budget_gs.php\n\n    d3.csv(\"FederalBudget_2013_a.csv\", function(csv) {\n\n        //Category > Value Stream > Project > Production Order\n        var data=[];\n\n        //Remove all zero values nodes\n        csv.forEach(function (d) {\n            var t=0;\n            for (var i=0; i < sumFields.length; i++) {\n                t+= Number(d[sumFields[i]]);\n            }\n            if (t > 0) {\n                data.push(d);\n            }\n        })\n\n        var nest = d3.nest()\n                .key(function(d) { return d.Level1; })\n                .key(function(d) { return d.Level2; })\n                .key(function(d) { return d.Level3; })\n                .entries(data);\n\n        root={};\n        root.values=nest;\n        root.x0 = h / 2;\n        root.y0 = 0;\n\n        //rollup(root.values);\n\n        var nodes = tree.nodes(root).reverse();\n\n        tree.children(function (d){ return d.children;});\n\n        initialize();\n        setup();\n\n        alreadySummed=true;\n\n        // Initialize the display to show a few nodes.\n        root.values.forEach(toggleAll);\n        toggle(root.values[2]);\n\n        update(root);\n\n        stateButton.on(\"click\",function (d) {\n            stateButton.attr(\"class\",\"selected\")\n            federalButton.attr(\"class\",null);\n            localButton.attr(\"class\",null);\n            stateDiv.attr(\"class\",\"selected\")\n            federalDiv.attr(\"class\",null);\n            localDiv.attr(\"class\",null);\n            spendField=\"sum_State\";\n            actField=\"sum_State\";\n            setup();\n            update(root);\n        });\n        localButton.on(\"click\",function (d) {\n            localButton.attr(\"class\",\"selected\")\n            stateButton.attr(\"class\",null);\n            federalButton.attr(\"class\",null);\n            localDiv.attr(\"class\",\"selected\")\n            federalDiv.attr(\"class\",null);\n            stateDiv.attr(\"class\",null);\n            spendField=\"sum_Local\";\n            actField=\"sum_Local\";\n            setup();\n            update(root);\n        });\n        federalButton.on(\"click\",function (d) {\n            federalButton.attr(\"class\",\"selected\")\n            stateButton.attr(\"class\",null);\n            localButton.attr(\"class\",null);\n            federalDiv.attr(\"class\",\"selected\")\n            stateDiv.attr(\"class\",null);\n            localDiv.attr(\"class\",null);\n            spendField=\"sum_Federal\";\n            setup();\n            update(root);\n        });\n\n        function initialize(){\n\n            for (var i=0; i < sumFields.length; i++) {\n                level1Max[\"sum_\" + sumFields[i]]=0;\n                level2Max[\"sum_\" + sumFields[i]]=0;\n                level3Max[\"sum_\" + sumFields[i]]=0;\n                level4Max[\"sum_\" + sumFields[i]]=0;\n            }\n            sumNodes(root.children);\n        }\n\n        function setup() {\n\n            level1Radius=d3.scale.sqrt()\n                    .domain([0, level1Max[spendField]])\n                    .range([1,40]);\n\n            level2Radius=d3.scale.sqrt()\n                    .domain([0, level2Max[spendField]])\n                    .range([1,40]);\n\n            level3Radius=d3.scale.sqrt()\n                    .domain([0, level3Max[spendField]])\n                    .range([1,40]);\n\n            level4Radius=d3.scale.sqrt()\n                    .domain([0, level4Max[spendField]])\n                    .range([1,40]);\n\n        }\n\n\n\n\n\n\n        function toggleAll(d) {\n            if (d.values && d.values.actuals) {\n                d.values.actuals.forEach(toggleAll);\n                toggle(d);\n            }\n            else if (d.values) {\n                d.values.forEach(toggleAll);\n                toggle(d);\n            }\n        }\n\n\n    });\n\n    function setSourceFields(child,parent) {\n        if (parent) {\n            for (var i=0; i < sourceFields.length; i++) {\n                var sourceField=sourceFields[i];\n                if (child[sourceField] != undefined) {\n                    child[\"source_\" + sourceField] = child[sourceField];\n                }\n                parent[\"source_\" + sourceField] = (child[\"source_\" + sourceField]) ? child[\"source_\" + sourceField] : child[sourceField];\n            }\n        }\n\n    }\n\n    function sumNodes(nodes)  {\n        for (var y=0; y < nodes.length; y++) {\n            var node=nodes[y];\n            if (node.children) {\n                sumNodes(node.children);\n                for (var z=0; z < node.children.length; z++) {\n                    var child=node.children[z];\n                    for (var i=0; i < sumFields.length; i++) {\n                        if (isNaN(node[\"sum_\" + sumFields[i]])) node[\"sum_\" + sumFields[i]]=0;\n                        node[\"sum_\" + sumFields[i]]+=Number(child[\"sum_\" + sumFields[i]]);\n\n                        //Set scales;\n\n                        console.log(\"sum_\" + sumFields[i] + \" \" + node[\"sum_\"+sumFields[i]]);\n\n                        if ((node.parent)) {\n                            if (node.depth==1) {\n                                level1Max[\"sum_\" + sumFields[i]]=Math.max(level1Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==2) {\n                                level2Max[\"sum_\" + sumFields[i]]=Math.max(level2Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==3) {\n                                level3Max[\"sum_\" + sumFields[i]]=Math.max(level3Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==4) {\n                                level4Max[\"sum_\" + sumFields[i]]=Math.max(level4Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            setSourceFields(node,node.parent);\n                        }\n\n                    }\n                }\n            }\n            else {\n                for (var i=0; i < sumFields.length; i++) {\n                    node[\"sum_\"+sumFields[i]]=Number(node[sumFields[i]]);\n                    if (isNaN(node[\"sum_\"+sumFields[i]])) {\n                        node[\"sum_\"+sumFields[i]] = 0;\n                    }\n                }\n            }\n            setSourceFields(node,node.parent);\n        }\n\n    }\n\n    function update(source) {\n\n        var duration = d3.event && d3.event.altKey ? 5000 : 500;\n\n        var nodes = tree.nodes(root).reverse();\n\n        var depthCounter=0;\n\n        // Normalize for fixed-depth.\n        nodes.forEach(function(d) {\n            d.y = d.depth * 180;\n            d.numChildren=(d.children) ? d.children.length : 0;\n\n            if (d.depth==1) {\n                d.linkColor=colors[(depthCounter % (colors.length-1))];\n                depthCounter++;\n            }\n\n            if (d.numChildren==0 && d._children) d.numChildren= d._children.length;\n\n        });\n\n        //Set link colors\n        nodes.forEach(function (d) {\n            var obj=d;\n\n            while ((obj.source && obj.source.depth > 1) || obj.depth > 1) {\n                obj=(obj.source) ? obj.source.parent : obj.parent;\n            }\n\n            d.linkColor=(obj.source) ? obj.source.linkColor : obj.linkColor;\n\n        });\n\n        // Update the nodes…\n        var node = vis.selectAll(\"g.node\")\n                .data(nodes, function(d) { return d.id || (d.id = ++i); });\n\n        // Enter any new nodes at the parent's previous position.\n        var nodeEnter = node.enter().append(\"svg:g\")\n                .attr(\"class\", \"node\")\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + source.y0 + \",\" + source.x0 + \")\";\n                })\n                .on(\"click\", function(d) {\n                    if (d.numChildren > 50) {\n                        alert(d.key + \" has too many departments (\" + d.numChildren + \") to view at once.\");\n                    }\n                    else {\n                        toggle(d);\n                        update(d);\n                    }\n                });\n\n        nodeEnter.append(\"svg:circle\")\n                .attr(\"r\", 1e-6)\n                .on(\"mouseover\", function(d) { node_onMouseOver(d);})\n                .on(\"mouseout\", function(d) {							// when the mouse leaves a circle, do the following\n                    toolTip.transition()									// declare the transition properties to fade-out the div\n                            .duration(500)									// it shall take 500ms\n                            .style(\"opacity\", \"0\");							// and go all the way to an opacity of nil\n                })\n                .style(\"fill\", function(d) { return d.source ? d.source.linkColor: d.linkColor;\n                })\n                .style(\"fill-opacity\", \".8\")\n                .style(\"stroke\", function(d) { return d.source ? d.source.linkColor: d.linkColor;\n                    });\n\n\n        nodeEnter.append(\"svg:text\")\n                .attr(\"x\", function(d) { return d.children || d._children ? -10 : 10; })\n                .attr(\"dy\", \".35em\")\n                .attr(\"text-anchor\",\n                function(d) {\n                    return d.children || d._children ? \"end\" : \"start\";\n                })\n                .text(function(d) {\n                    var ret= (d.depth==4) ? d.Level4 : d.key;\n                    ret = (String(ret).length > 25) ? String(ret).substr(0,22)  + \"...\" : ret;\n                    return ret;\n                })\n                .on(\"mouseover\", function(d) { node_onMouseOver(d);})\n                .on(\"mouseout\", function(d) {							// when the mouse leaves a circle, do the following\n                    toolTip.transition()									// declare the transition properties to fade-out the div\n                            .duration(500)									// it shall take 500ms\n                            .style(\"opacity\", \"0\");							// and go all the way to an opacity of nil\n                })\n                .style(\"fill-opacity\", \"0\");\n\n        // Transition nodes to their new position.\n        var nodeUpdate = node.transition()\n                .duration(duration)\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + d.y + \",\" + d.x + \")\";\n                });\n\n        nodeUpdate.select(\"circle\")\n                .attr(\"r\", function (d) {\n\n                        if (d.depth==0) {\n                            return 10;\n                        }\n                        else if (d.depth==1) {\n                            var ret = level1Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==2) {\n                            var ret = level2Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==3) {\n                            var ret = level3Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==4) {\n                            var ret = level4Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n\n                })\n                .style(\"fill\", function(d) { return d.source ? d.source.linkColor: d.linkColor})\n                .style(\"fill-opacity\",  function(d) {\n                    var ret = ((d.depth+1)/5);\n                    return ret; });\n\n\n\n\n        nodeUpdate.select(\"text\")\n                .style(\"fill-opacity\", 1);\n\n        // Transition exiting nodes to the parent's new position.\n        var nodeExit = node.exit().transition()\n                .duration(duration)\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + source.y + \",\" + source.x + \")\";\n                })\n                .remove();\n\n        nodeExit.select(\"circle\")\n                .attr(\"r\", 1e-6);\n\n        nodeExit.select(\"text\")\n                .style(\"fill-opacity\", 1e-6);\n\n        // Update the links…\n        var link = vis.selectAll(\"path.link\")\n                .data(tree.links(nodes), function(d) {\n                    return d.target.id;\n                });\n\n        var rootCounter=0;\n\n        // Enter any new links at the parent's previous position.\n        link.enter().insert(\"svg:path\", \"g\")\n                .attr(\"class\", \"link\")\n                .attr(\"d\", function(d) {\n                    if (Number(d.target[spendField]) > 0) {\n                        var o = {x: source.x0, y: source.y0};\n                        return diagonal({source: o, target: o});\n                    }\n                    else {\n                        null;\n                    }\n                })\n                .style(\"stroke\",function (d,i) {\n                    if (d.source.depth==0) {\n                        rootCounter++;\n                        return (d.source.children[rootCounter-1].linkColor);\n                    }\n                    else {\n                        return (d.source) ? d.source.linkColor : d.linkColor;\n                    }\n                })\n                .style(\"stroke-width\", function (d,i) {\n\n                    if (d.source.depth==0) {\n                        var ret = level1Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==1) {\n                        var ret = level2Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==2) {\n                        var ret = level3Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==3) {\n                        var ret = level4Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                 })\n                .style(\"stroke-opacity\", function(d){\n                    var ret = ((d.source.depth+1)/4.5)\n                    if (d.target[spendField] <= 0) ret=.1;\n                    return ret;\n                })\n                .style(\"stroke-linecap\",\"round\")\n                .transition()\n                .duration(duration);\n          //      .attr(\"d\", diagonal);\n\n\n        // Transition links to their new position.\n         var linkUpdate = link.transition()\n                .duration(duration)\n                .attr(\"d\", diagonal);\n\n         linkUpdate\n                 .style(\"stroke-width\", function (d,i) {\n                     if (d.source.depth==0) {\n                         var ret = level1Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==1) {\n                         var ret = level2Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==2) {\n                         var ret = level3Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==3) {\n                         var ret = level4Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                })\n             //    .style(\"stroke-dasharray\", function(d) {\n             //       var ret=(d.target[spendField] > 0) ? \"\" : \"5,8\";\n             //       return ret;\n             //    })\n                 .style(\"stroke-opacity\", function(d){\n                     var ret = ((d.source.depth+1)/4.5)\n                     if (d.target[spendField] <= 0) ret=.1;\n                     return ret;\n                 })\n\n\n        // Transition exiting nodes to the parent's new position.\n        link.exit().transition()\n                .duration(duration)\n                .attr(\"d\", diagonal)\n                .remove();\n\n        // Stash the old positions for transition.\n        nodes.forEach(function(d) {\n            d.x0 = d.x;\n            d.y0 = d.y;\n        });\n\n\n        function node_onMouseOver(d) {\n            toolTip.transition()\n                    .duration(200)\n                    .style(\"opacity\", \".9\");\n            header.text(d[\"source_Level1\"]);\n            header1.text((d.depth > 1) ? d[\"source_Level2\"] : \"\");\n            header2.html((d.depth > 2) ? d[\"source_Level3\"] : \"\");\n            if (d.depth > 3) header2.html(header2.html() + \" - \"  + d[\"source_Level4\"]);\n\n            fedSpend.text(formatCurrency(d[\"sum_Federal\"]));\n\n            stateSpend.text(formatCurrency(d[\"sum_State\"]));\n\n            localSpend.text(formatCurrency(d[\"sum_Local\"]));\n\n            toolTip.style(\"left\", (d3.event.pageX+15) + \"px\")\n                    .style(\"top\", (d3.event.pageY-75) + \"px\");\n        }\n\n\n\n\n    }\n\n\n    function toggleButton(button) {\n        button.attr(\"class\",\"selected\");\n        if (button == federalButton) {\n            localButton.attr(\"class\",\"unselected\");\n            stateButton.attr(\"class\",\"unselected\");\n        }\n        else if (button == stateButton) {\n            localButton.attr(\"class\",\"unselected\");\n            federalButton.attr(\"class\",\"unselected\");\n        }\n        else {\n            federalButton.attr(\"class\",\"unselected\");\n            stateButton.attr(\"class\",\"unselected\");\n        }\n    }\n\n\n        // Toggle children.\n    function toggle(d) {\n        if (d.children) {\n            d._children = d.children;\n            d.children = null;\n        } else {\n            d.children = d._children;\n            d._children = null;\n        }\n    }\n\n\n</script>\n\n\n\n</body></html>",
 			"settings":
 			{
-				"buffer_size": 22964,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n\ndiv.tooltip {\n    position: absolute;     /* reference for measurement */\n    text-align: left;\n    pointer-events: none;     /* 'none' tells the mouse to ignore the rectangle */\n    background: #FFFFEF;\n    width: 400px;\n    height: 165px;\n    padding: 10px;\n    border: 1px solid #D5D5D5;\n    font-family: arial,helvetica,sans-serif;\n    position: absolute;\n    font-size: 1.1em;\n    color: #333;\n    padding: 10px;\n    border-radius: 3px;\n    background: rgba(255,255,255,0.9);\n    color: #000;\n    box-shadow: 0 1px 5px rgba(0,0,0,0.4);\n    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);\n    border:1px solid rgba(200,200,200,0.85);\n}\n\ndiv.tooltipTail {\n    position: absolute;\n    left:-7px;\n    top: 72px;\n    width: 7px;\n    height: 13px;\n    background: url(\"images/tail_white.png\") 50% 0%;\n}\n\ndiv.toolTipBody {\n    position:absolute;\n    height:100px;\n    width:230px;\n}\n\ndiv.header {\n    text-transform: uppercase;\n    text-align: left;\n    font-size: 14px;\n    margin-bottom: 2px;\n    color:#666;\n    text-align:center;\n\n}\n\ndiv.header-rule{\n    height:1px;\n    margin:1px auto 3px;\n    margin-top:7px;\n    margin-bottom:7px;\n    background:#ddd;\n    width:125px;\n}\n\ndiv.header1{\n    text-transform: uppercase;\n    text-align: left;\n    font-size: 12px;\n    margin-bottom: 2px;\n    color:#333;\n    text-align:center;\n}\n\ndiv.header2{\n    color:#000;\n    /*   text-transform:uppercase;*/\n    font-size: 11px;\n    text-align:center;\n    font-style:italic;\n}\n\ndiv.header3 {\n    text-align: left;\n    font-size: 11px;\n    /*  width:170px;*/\n    text-align:center;\n}\n\ndiv.header4 {\n    /*  position:absolute;*/\n    text-align:center;\n    right:10px;\n    top:28px;\n    font-size: 16px;\n    /*  width:100px;*/\n    text-align:center;\n    overflow:hidden;\n    font-weight:bold;\n}\n\n/* Navigation */\n.nytg-navBar {\n    border-top: solid 1px #DDD;\n    padding: 15px 0 0;\n    margin: 0 10px;\n    z-index: 100;\n    position: absolute;\n    width: 950px;\n}\n\n\n.nytg-navigation {\n\n}\n.nytg-navigation li {\n    color: #999;\n    font-size: 14px;\n    cursor: pointer;\n    float: left;\n    padding: 10px 18px;\n    border-top: solid 1px #CCC;\n    border-bottom: solid 1px #CCC;\n    border-left: solid 1px #CCC;\n    background: #f9f9f9;\n    margin: 0 0;\n}\n\n.nytg-navigation li:first-of-type{\n    border-radius: 4px 0 0 4px;\n}\n.nytg-navigation li:last-of-type{\n\n    border-right: solid 1px #CCC;\n    border-radius: 0 4px 4px 0;\n}\n.nytg-navigation li.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n}\n\n.nytg-navigation li.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n}\n\ndiv.selected {\n    color: #000;\n    background: #e9e9e9;\n    border-color: #AAA;\n    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);\n    padding-bottom:10px;\n}\n\n\n",
+			"contents": "{\n	\"name\": \"performance\",\n	\"children\": [\n		{\n			\"name\": \"1\",\n			\"children\": [\n				{\n					\"name\": \"endurance\",\n					\"children\": [\n						{\n							\"\": \"1\",\n							\"id\": \"1\",\n							\"category\": \"1\",\n							\"sub_category\": \"endurance\",\n							\"gene_name\": \"ACTN3\",\n							\"gene_function\": \"ACTN3 (actinin alpha 3) is an actin-binding protein expressed in skeletal muscle that is involved in the ability of muscles to produce fast contractions.\",\n							\"name\": \"rs1815739\",\n							\"pmid\": \"17550918\",\n							\"x_cases\": \"112\",\n							\"x_controls\": \"123\",\n							\"p_value\": \"0.041\",\n							\"odds_ratio\": \"n/a\",\n							\"journal_rank\": \"4084\",\n							\"rank\": \"2\",\n							\"far_allele\": \"T\",\n							\"hypothetical_genotype\": \"TT\",\n							\"varient_score\": \"3\",\n							\"weight\": \"2\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						},\n						{\n							\"\": \"2\",\n							\"id\": \"2\",\n							\"category\": \"1\",\n							\"sub_category\": \"endurance\",\n							\"gene_name\": \"ACE\",\n							\"gene_function\": \"ACE (angiotensin-converting enzyme) is a vasoconstrictor enzyme that is related to electrolyte balance and systemic blood pressure by causing blood vessels to constrict and blood pressure to increase. In athletic performance, it is related to cardiovascular and skeletal muscle function, fast twitch muscle activity, and muscle efficiency.\",\n							\"name\": \"rs1799752\",\n							\"pmid\": \"19237423\",\n							\"x_cases\": \"46\",\n							\"x_controls\": \"123\",\n							\"p_value\": \"0.006\",\n							\"odds_ratio\": \"1.5\",\n							\"journal_rank\": \"n/a\",\n							\"rank\": \"1\",\n							\"far_allele\": \"I\",\n							\"hypothetical_genotype\": \"II\",\n							\"varient_score\": \"2\",\n							\"weight\": \"1\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						},\n						{\n							\"\": \"3\",\n							\"id\": \"3\",\n							\"category\": \"1\",\n							\"sub_category\": \"endurance\",\n							\"gene_name\": \"ADRB2\",\n							\"gene_function\": \"ADRB2/ADRB3 (adrenergic beta-2/beta-3 receptor) encode proteins in the family of beta adrenergic receptors which trigger agonist-stimulated adenylyl cyclase activity to divert blood flow to skeletal muscle. The beta-2-adrenergic receptor is responsible for increases in bronchodilation, ventricular function, and vasodilation, which impact the cardiovascular and pulmonary response to exercise. The beta-3-adrenergic receptor is involved in the regulation of lipolysis and thermogenesis.\",\n							\"name\": \"rs1042713\",\n							\"pmid\": \"20044476\",\n							\"x_cases\": \"438\",\n							\"x_controls\": \"0\",\n							\"p_value\": \"0.01\",\n							\"odds_ratio\": \"n/a\",\n							\"journal_rank\": \"749\",\n							\"rank\": \"1\",\n							\"far_allele\": \"A\",\n							\"hypothetical_genotype\": \"AG\",\n							\"varient_score\": \"1\",\n							\"weight\": \"1\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						},\n						{\n							\"\": \"7\",\n							\"id\": \"7\",\n							\"category\": \"1\",\n							\"sub_category\": \"endurance\",\n							\"gene_name\": \"GNB3 \",\n							\"gene_function\": \"GNB3 (guanine nucleotide-binding protein subunit beta-3) is involved in transmembrane signaling systems and G protein activation of hormones, neurotransmitters, chemokines, and local mediators that may be conducive to athletic performance.\",\n							\"name\": \"rs5443\",\n							\"pmid\": \"19139061\",\n							\"x_cases\": \"155\",\n							\"x_controls\": \"234\",\n							\"p_value\": \"0.046\",\n							\"odds_ratio\": \"4.49\",\n							\"journal_rank\": \"2490\",\n							\"rank\": \"1\",\n							\"far_allele\": \"C\",\n							\"hypothetical_genotype\": \"CC\",\n							\"varient_score\": \"NA\",\n							\"weight\": \"1\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						}\n					]\n				},\n				{\n					\"name\": \"power\",\n					\"children\": [\n						{\n							\"\": \"8\",\n							\"id\": \"8\",\n							\"category\": \"1\",\n							\"sub_category\": \"power\",\n							\"gene_name\": \"ACTN3 \",\n							\"gene_function\": \"ACTN3 (actinin alpha 3) is an actin-binding protein expressed in skeletal muscle that is involved in the ability of muscles to produce fast contractions.\",\n							\"name\": \"rs1815739\",\n							\"pmid\": \"17550918\",\n							\"x_cases\": \"112\",\n							\"x_controls\": \"123\",\n							\"p_value\": \"0.041\",\n							\"odds_ratio\": \"n/a\",\n							\"journal_rank\": \"4084\",\n							\"rank\": \"2\",\n							\"far_allele\": \"T\",\n							\"hypothetical_genotype\": \"CC\",\n							\"varient_score\": \"NA\",\n							\"weight\": \"2\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						},\n						{\n							\"\": \"9\",\n							\"id\": \"9\",\n							\"category\": \"1\",\n							\"sub_category\": \"power\",\n							\"gene_name\": \"ACE \",\n							\"gene_function\": \"ACE (angiotensin-converting enzyme) is a vasoconstrictor enzyme that is related to electrolyte balance and systemic blood pressure by causing blood vessels to constrict and blood pressure to increase. In athletic performance, it is related to cardiovascular and skeletal muscle function, fast twitch muscle activity, and muscle efficiency.\",\n							\"name\": \"rs1799752\",\n							\"pmid\": \"19237423\",\n							\"x_cases\": \"46\",\n							\"x_controls\": \"123\",\n							\"p_value\": \"0.006\",\n							\"odds_ratio\": \"1.5\",\n							\"journal_rank\": \"n/a\",\n							\"rank\": \"1\",\n							\"far_allele\": \"D\",\n							\"hypothetical_genotype\": \"II\",\n							\"varient_score\": \"NA\",\n							\"weight\": \"1\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						},\n						{\n							\"\": \"10\",\n							\"id\": \"10\",\n							\"category\": \"1\",\n							\"sub_category\": \"power\",\n							\"gene_name\": \"AGT \",\n							\"gene_function\": \"AGT (angiotensinogen) is an essential component of the renin-angiotensin system (RAS), a regulator of blood pressure, body fluid, and electrolyte homeostasis, and in athletic performance, blood pressure response to exercise.\",\n							\"name\": \"rs699\",\n							\"pmid\": \"20029521\",\n							\"x_cases\": \"163\",\n							\"x_controls\": \"119\",\n							\"p_value\": \"0.008\",\n							\"odds_ratio\": \"1.681\",\n							\"journal_rank\": \"n/a\",\n							\"rank\": \"1\",\n							\"far_allele\": \"C\",\n							\"hypothetical_genotype\": \"AG\",\n							\"varient_score\": \"NA\",\n							\"weight\": \"1\",\n							\"remark_1\": \"NA\",\n							\"remark_2\": \"NA\",\n							\"remark_3\": \"NA\"\n						}\n					]\n				}\n			]\n		}\n	]\n} ",
 			"settings":
 			{
-				"buffer_size": 2875,
+				"buffer_size": 6124,
+				"line_ending": "Unix",
+				"name": "{"
+			}
+		},
+		{
+			"file": "js/performancechip.js",
+			"settings":
+			{
+				"buffer_size": 19260,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,8 +220,20 @@
 	},
 	"file_history":
 	[
-		"/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancetree.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancechip.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancechip_v2.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/sm_andy_chip.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/sm_chip.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/ANDY_SNPCHIP.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancechip.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancechip_v2.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/treemap_v2.css",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/treemap.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/starter-template.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/remove.js",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/21_each.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_08/05_axes_random.html",
@@ -184,7 +244,6 @@
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/19_axes_static.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/20_axes_dynamic.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/1.html",
-		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancetree.js",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/2.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/index.html",
 		"/Users/nehiljain/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -206,6 +265,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"rs_id\":",
+			"weight",
+			"values\":",
+			"key\":",
+			"rs_id",
+			"key",
+			"filename",
+			"x",
+			"node",
+			"\": \"sn",
+			"me\" : \"R",
+			"me\" : \"M",
+			"\"size\": ",
+			"color",
+			"background",
+			"size\":",
+			"size",
+			"\"value\":",
+			"\"value\": 0,",
 			"infodi",
 			"cons",
 			"toolTip",
@@ -244,24 +322,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "css/starter-template.css",
+					"file": "js/performancechip_v2.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2462,
+						"buffer_size": 4645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								2462
+								3715,
+								3715
 							]
 						],
 						"settings":
@@ -269,22 +347,34 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -293,18 +383,6 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -313,10 +391,12 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 1777.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -324,19 +404,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "performancetree.html",
+					"file": "data.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2374,
+						"buffer_size": 2885,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1270,
-								1270
+								2804,
+								2804
 							]
 						],
 						"settings":
@@ -344,22 +424,34 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -368,18 +460,6 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -393,19 +473,170 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 137.0,
+						"translation.y": 530.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "performancechip.html",
+					"file": "data/sm_chip.csv",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2374,
+						"buffer_size": 2886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1525,
+								2886
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "performancechip_v2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2348,
+								2348
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -419,214 +650,14 @@
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close"
-							],
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/performancetree.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15071,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10981,
-								10981
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22964,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13479,
-								13691
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5453.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -634,7 +665,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2875,
+						"buffer_size": 6124,
 						"regions":
 						{
 						},
@@ -642,30 +673,43 @@
 						[
 							[
 								0,
-								879
+								6124
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
+							"auto_name": "{",
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -674,18 +718,80 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/performancechip.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15279,
+								15279
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -698,11 +804,11 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 1.0,
+						"translation.y": 7640.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
