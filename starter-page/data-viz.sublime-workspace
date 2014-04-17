@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"r",
+				"root"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"ne",
+				"nested_data"
+			],
+			[
+				"me",
+				"metabolismColor"
+			],
+			[
+				"reco",
+				"recoveryColor"
+			],
+			[
+				"power",
+				"powerColor"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"color",
+				"colorbrewer"
+			],
+			[
+				"in",
+				"infodiv"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"link",
+				"linkcolor"
+			],
+			[
+				"ge",
+				"geneticData"
+			],
+			[
+				"ma",
+				"maxDepth"
+			],
+			[
+				"at",
+				"attr	selection.attr"
+			],
+			[
 				"re",
 				"return"
 			],
@@ -40,10 +108,6 @@
 				"width"
 			],
 			[
-				"in",
-				"inline-block"
-			],
-			[
 				"da",
 				"dataset"
 			]
@@ -52,26 +116,18 @@
 	"buffers":
 	[
 		{
-			"file": "2.html",
+			"file": "js/performancetree.js",
 			"settings":
 			{
-				"buffer_size": 3393,
+				"buffer_size": 13435,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "1.html",
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/index.html",
 			"settings":
 			{
-				"buffer_size": 2406,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/starter-template.css",
-			"settings":
-			{
-				"buffer_size": 211,
+				"buffer_size": 6518,
 				"line_ending": "Unix"
 			}
 		}
@@ -124,6 +180,31 @@
 	},
 	"file_history":
 	[
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancechip.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/sm_chip.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancechip_v2.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancechip_v2.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancetree.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/sm_andy_chip.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/ANDY_SNPCHIP.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancechip.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/treemap_v2.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/treemap.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/starter-template.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/remove.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/21_each.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_08/05_axes_random.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/3.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/14_delay_dynamic.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/15_delay_dynamic_scaled.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/18_dynamic_scale.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/19_axes_static.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/20_axes_dynamic.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/1.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/2.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/index.html",
 		"/Users/nehiljain/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/nehiljain/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
@@ -144,6 +225,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"rs_id\":",
+			"weight",
+			"values\":",
+			"key\":",
+			"rs_id",
+			"key",
+			"filename",
+			"x",
+			"node",
+			"\": \"sn",
+			"me\" : \"R",
+			"me\" : \"M",
+			"\"size\": ",
+			"color",
+			"background",
+			"size\":",
+			"size",
+			"\"value\":",
+			"\"value\": 0,",
+			"infodi",
+			"cons",
+			"toolTip",
+			"tooltip",
+			"none",
+			"tooltip",
+			"div",
+			"\"weight\"",
+			"\"weight\":",
+			"\"weight\"",
+			"#0073b7",
+			"Metabolism",
+			"3edd88",
+			"#3edd88",
+			"#dd2a51",
+			"Power",
+			"green",
+			"red",
+			"className",
+			"click",
+			"r "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -161,24 +282,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "2.html",
+					"file": "js/performancetree.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3393,
+						"buffer_size": 13435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3219,
-								3219
+								9652,
+								9939
 							]
 						],
 						"settings":
@@ -186,6 +307,10 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -194,18 +319,14 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -214,91 +335,14 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 874.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "1.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2406,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -307,32 +351,32 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6107.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "css/starter-template.css",
+					"buffer": 1,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 211,
+						"buffer_size": 6518,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								209,
-								209
+								5698,
+								5698
 							]
 						],
 						"settings":
@@ -340,6 +384,34 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -348,47 +420,23 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close"
 							],
 							"incomplete_sync": null,
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1628.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -396,7 +444,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -436,7 +484,7 @@
 	"project": "data-viz.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -444,6 +492,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"per",
+				"starter-page/js/performancetree.js"
+			],
+			[
+				"19",
+				"d3-book/chapter_09/19_axes_static.html"
+			],
 			[
 				"2",
 				"starter-page/2.html"
@@ -474,7 +530,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 298.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
