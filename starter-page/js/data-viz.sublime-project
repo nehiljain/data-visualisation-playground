@@ -4,6 +4,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/Users/nehiljain/coderepo/data-visualisation-playground"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/nehiljain/coderepo/website"
 		}
 	]
 }

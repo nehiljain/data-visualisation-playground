@@ -4,6 +4,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/Users/nehiljain/coderepo/data-visualisation-playground"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/nehiljain/coderepo/data-analysis-projects/general-healthcare-india/presentation"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/nehiljain/Downloads/d3-book-master"
 		}
 	]
 }

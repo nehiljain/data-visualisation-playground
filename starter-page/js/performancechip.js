@@ -561,8 +561,8 @@ var geneticData2 = {
   ]
 }; 
 
-var w = 900 - 80,
-    h = 600 - 180,
+var w = 300 - 80,
+    h = 280 - 180,
     x = d3.scale.linear().range([0, w]),
     y = d3.scale.linear().range([0, h]),
     root,
