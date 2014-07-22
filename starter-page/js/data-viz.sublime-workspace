@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"height"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
 				"fun",
 				"function"
 			],
@@ -72,50 +84,90 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/starter-template.css",
+			"file": "/Users/nehiljain/coderepo/website/source/_drafts/Javascript-functions.md",
 			"settings":
 			{
-				"buffer_size": 2462,
+				"buffer_size": 1401,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
+			"file": "seven-curves.js",
 			"settings":
 			{
-				"buffer_size": 2412,
+				"buffer_size": 3670,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "performancetree.js",
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/seven-curves.css",
 			"settings":
 			{
-				"buffer_size": 15680,
+				"buffer_size": 515,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/n-barchart.html",
 			"settings":
 			{
-				"buffer_size": 370,
+				"buffer_size": 1877,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n<!DOCTYPE html><head>\n    <meta HTTP-EQUIV=\"X-UA-COMPATIBLE\" CONTENT=\"IE=EmulateIE9\" >\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Federal Budget Data Visualization D3.js</title>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"style.css\">\n    <script type=\"text/javascript\" src=\"scripts/d3.js\"></script>\n\n    <script src=\"http://www.google-analytics.com/urchin.js\" type=\"text/javascript\">\n    </script>\n    <script type=\"text/javascript\">\n        _uacct = \"UA-173014-2\";\n        urchinTracker();\n    </script>\n\n</head>\n<style>\n    a:hover {\n        font-weight:bold;\n        color:#000000;\n    }\n</style>\n<body style=\"height:900px; width:1280px; overflow:auto\">\n\n<div class=\"nytg-navBar\" style=\"left:20px;\">\n    <ul class=\"nytg-navigation clearfix\" style=\"list-style-type:none\">\n        <li id=\"federalButton\" class=\"selected\">Federal</li>\n        <li id=\"stateButton\">State</li>\n        <li id=\"localButton\">Local</li>\n    </ul>\n</div>\n\n\n<div id=\"footer\" style=\"position:absolute; right:20px; top:15px;\">\n    2013 Federal Budget\n    <div class=\"hint\" style=\"font-style:italic\">\n        click on a circle for a more granular view.<br>\n        click on \"Federal\", \"State\", or \"Local\" buttons to see spending at those levels.\n        <br><br>\n        <div style=\"color:#000; font-style:normal\">\n        Design and Engineering: <a href=\"http://www.brightpointinc.com/project-list/\" title=\"BrightPoint Consulting, Inc.\">www.brightpointinc.com</a>\n        </div>\n    </div>\n</div>\n\n\n<div id=\"body\" style=\"position: absolute; top:80px\">\n\n<div id=\"toolTip\" class=\"tooltip\" style=\"opacity:0;\">\n    <div id=\"head\" class=\"header\"></div>\n    <div id=\"header1\" class=\"header1\"></div>\n    <div id=\"header2\" class=\"header2\"></div>\n    <div style=\"position:absolute; left:10px\">\n        <div id=\"federalDiv\" style=\"width:135px; left:0px; top:10px; position: absolute;\" class=\"selected\">\n            <div class=\"header3\"><br>Federal Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"fedSpend\" class=\"header4\"></div>\n        </div>\n        <div id=\"stateDiv\" style=\"width:125px; left:140px; top:10px; position: absolute;\">\n            <div class=\"header3\"><br>State Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"stateSpend\" class=\"header4\"></div>\n        </div>\n        <div id=\"localDiv\" style=\"width:125px; left:272px; top:10px; position: absolute;\">\n            <div class=\"header3\"><br>Local Funds</div>\n            <div class=\"header-rule\"></div>\n            <div id=\"localSpend\" class=\"header4\"></div>\n        </div>\n    </div>\n    <div  class=\"tooltipTail\"></div>\n</div>\n\n <script type=\"text/javascript\">\n\n    var m = [20, 120, 20, 120],\n            w = 1280 - m[1] - m[3],\n            h = 900 - m[0] - m[2],\n            i = 0,\n            root = {};\n\n    var spendField=\"sum_Federal\";\n    var actField=\"sum_Federal\";\n    var sumFields=[\"Federal\",\"GovXFer\",\"State\",\"Local\"];\n    var sourceFields=[\"Category\",\"Level1\",\"Level2\",\"Level3\",\"Level4\"];\n\n\n    var colors = [\"#bd0026\",\"#fecc5c\", \"#fd8d3c\", \"#f03b20\", \"#B02D5D\",\n        \"#9B2C67\", \"#982B9A\", \"#692DA7\", \"#5725AA\", \"#4823AF\",\n        \"#d7b5d8\",\"#dd1c77\",\"#5A0C7A\",\"#5A0C7A\"];\n\n    /*\n    var colors = [\"#D5252F\", \"#E96B38\", \"#F47337\", \"#B02D5D\",\n        \"#9B2C67\", \"#982B9A\", \"#692DA7\", \"#5725AA\", \"#4823AF\",\n        \"#d7b5d8\",\" #df65b0\",\"#dd1c77\",\"#980043\"];\n    */\n    var formatNumber = d3.format(\",.3f\");\n    var formatCurrency = function(d) { return \"$\" + formatNumber(d) + \" Billion\" };\n\n    var tree = d3.layout.tree();\n\n          tree.children(function (d) { return d.values; });\n          tree.size([h, w]);\n\n\n    var toolTip = d3.select(document.getElementById(\"toolTip\"));\n    var header = d3.select(document.getElementById(\"head\"));\n    var header1 = d3.select(document.getElementById(\"header1\"));\n    var header2 = d3.select(document.getElementById(\"header2\"));\n\n    var fedSpend = d3.select(document.getElementById(\"fedSpend\"));\n\n    var stateSpend = d3.select(document.getElementById(\"stateSpend\"));\n\n    var localSpend = d3.select(document.getElementById(\"localSpend\"));\n\n    var federalButton=d3.select(document.getElementById(\"federalButton\"));\n    var stateButton=d3.select(document.getElementById(\"stateButton\"));\n    var localButton=d3.select(document.getElementById(\"localButton\"));\n    var federalDiv=d3.select(document.getElementById(\"federalDiv\"));\n    var stateDiv=d3.select(document.getElementById(\"stateDiv\"));\n    var localDiv=d3.select(document.getElementById(\"localDiv\"));\n\n\n    var diagonal = d3.svg.diagonal()\n            .projection(function(d) { return [d.y, d.x]; });\n\n    var vis = d3.select(\"#body\").append(\"svg:svg\")\n            .attr(\"width\", w + m[1] + m[3])\n            .attr(\"height\", h + m[0] + m[2])\n            .append(\"svg:g\")\n            .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\n    var level1Max={};\n    var level2Max={};\n    var level3Max={};\n    var level4Max={};\n\n    var level1Radius;\n    var level2Radius;\n    var level3Radius;\n    var level4Radius;\n\n    var alreadySummed=false;\n\n\n//http://www.usgovernmentspending.com/budget_gs.php\n\n    d3.csv(\"FederalBudget_2013_a.csv\", function(csv) {\n\n        //Category > Value Stream > Project > Production Order\n        var data=[];\n\n        //Remove all zero values nodes\n        csv.forEach(function (d) {\n            var t=0;\n            for (var i=0; i < sumFields.length; i++) {\n                t+= Number(d[sumFields[i]]);\n            }\n            if (t > 0) {\n                data.push(d);\n            }\n        })\n\n        var nest = d3.nest()\n                .key(function(d) { return d.Level1; })\n                .key(function(d) { return d.Level2; })\n                .key(function(d) { return d.Level3; })\n                .entries(data);\n\n        root={};\n        root.values=nest;\n        root.x0 = h / 2;\n        root.y0 = 0;\n\n        //rollup(root.values);\n\n        var nodes = tree.nodes(root).reverse();\n\n        tree.children(function (d){ return d.children;});\n\n        initialize();\n        setup();\n\n        alreadySummed=true;\n\n        // Initialize the display to show a few nodes.\n        root.values.forEach(toggleAll);\n        toggle(root.values[2]);\n\n        update(root);\n\n        stateButton.on(\"click\",function (d) {\n            stateButton.attr(\"class\",\"selected\")\n            federalButton.attr(\"class\",null);\n            localButton.attr(\"class\",null);\n            stateDiv.attr(\"class\",\"selected\")\n            federalDiv.attr(\"class\",null);\n            localDiv.attr(\"class\",null);\n            spendField=\"sum_State\";\n            actField=\"sum_State\";\n            setup();\n            update(root);\n        });\n        localButton.on(\"click\",function (d) {\n            localButton.attr(\"class\",\"selected\")\n            stateButton.attr(\"class\",null);\n            federalButton.attr(\"class\",null);\n            localDiv.attr(\"class\",\"selected\")\n            federalDiv.attr(\"class\",null);\n            stateDiv.attr(\"class\",null);\n            spendField=\"sum_Local\";\n            actField=\"sum_Local\";\n            setup();\n            update(root);\n        });\n        federalButton.on(\"click\",function (d) {\n            federalButton.attr(\"class\",\"selected\")\n            stateButton.attr(\"class\",null);\n            localButton.attr(\"class\",null);\n            federalDiv.attr(\"class\",\"selected\")\n            stateDiv.attr(\"class\",null);\n            localDiv.attr(\"class\",null);\n            spendField=\"sum_Federal\";\n            setup();\n            update(root);\n        });\n\n        function initialize(){\n\n            for (var i=0; i < sumFields.length; i++) {\n                level1Max[\"sum_\" + sumFields[i]]=0;\n                level2Max[\"sum_\" + sumFields[i]]=0;\n                level3Max[\"sum_\" + sumFields[i]]=0;\n                level4Max[\"sum_\" + sumFields[i]]=0;\n            }\n            sumNodes(root.children);\n        }\n\n        function setup() {\n\n            level1Radius=d3.scale.sqrt()\n                    .domain([0, level1Max[spendField]])\n                    .range([1,40]);\n\n            level2Radius=d3.scale.sqrt()\n                    .domain([0, level2Max[spendField]])\n                    .range([1,40]);\n\n            level3Radius=d3.scale.sqrt()\n                    .domain([0, level3Max[spendField]])\n                    .range([1,40]);\n\n            level4Radius=d3.scale.sqrt()\n                    .domain([0, level4Max[spendField]])\n                    .range([1,40]);\n\n        }\n\n\n\n\n\n\n        function toggleAll(d) {\n            if (d.values && d.values.actuals) {\n                d.values.actuals.forEach(toggleAll);\n                toggle(d);\n            }\n            else if (d.values) {\n                d.values.forEach(toggleAll);\n                toggle(d);\n            }\n        }\n\n\n    });\n\n    function setSourceFields(child,parent) {\n        if (parent) {\n            for (var i=0; i < sourceFields.length; i++) {\n                var sourceField=sourceFields[i];\n                if (child[sourceField] != undefined) {\n                    child[\"source_\" + sourceField] = child[sourceField];\n                }\n                parent[\"source_\" + sourceField] = (child[\"source_\" + sourceField]) ? child[\"source_\" + sourceField] : child[sourceField];\n            }\n        }\n\n    }\n\n    function sumNodes(nodes)  {\n        for (var y=0; y < nodes.length; y++) {\n            var node=nodes[y];\n            if (node.children) {\n                sumNodes(node.children);\n                for (var z=0; z < node.children.length; z++) {\n                    var child=node.children[z];\n                    for (var i=0; i < sumFields.length; i++) {\n                        if (isNaN(node[\"sum_\" + sumFields[i]])) node[\"sum_\" + sumFields[i]]=0;\n                        node[\"sum_\" + sumFields[i]]+=Number(child[\"sum_\" + sumFields[i]]);\n\n                        //Set scales;\n\n                        console.log(\"sum_\" + sumFields[i] + \" \" + node[\"sum_\"+sumFields[i]]);\n\n                        if ((node.parent)) {\n                            if (node.depth==1) {\n                                level1Max[\"sum_\" + sumFields[i]]=Math.max(level1Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==2) {\n                                level2Max[\"sum_\" + sumFields[i]]=Math.max(level2Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==3) {\n                                level3Max[\"sum_\" + sumFields[i]]=Math.max(level3Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            else if (node.depth==4) {\n                                level4Max[\"sum_\" + sumFields[i]]=Math.max(level4Max[\"sum_\" + sumFields[i]],Number(node[\"sum_\" + sumFields[i]]));\n                            }\n                            setSourceFields(node,node.parent);\n                        }\n\n                    }\n                }\n            }\n            else {\n                for (var i=0; i < sumFields.length; i++) {\n                    node[\"sum_\"+sumFields[i]]=Number(node[sumFields[i]]);\n                    if (isNaN(node[\"sum_\"+sumFields[i]])) {\n                        node[\"sum_\"+sumFields[i]] = 0;\n                    }\n                }\n            }\n            setSourceFields(node,node.parent);\n        }\n\n    }\n\n    function update(source) {\n\n        var duration = d3.event && d3.event.altKey ? 5000 : 500;\n\n        var nodes = tree.nodes(root).reverse();\n\n        var depthCounter=0;\n\n        // Normalize for fixed-depth.\n        nodes.forEach(function(d) {\n            d.y = d.depth * 180;\n            d.numChildren=(d.children) ? d.children.length : 0;\n\n            if (d.depth==1) {\n                d.linkColor=colors[(depthCounter % (colors.length-1))];\n                depthCounter++;\n            }\n\n            if (d.numChildren==0 && d._children) d.numChildren= d._children.length;\n\n        });\n\n        //Set link colors\n        nodes.forEach(function (d) {\n            var obj=d;\n\n            while ((obj.source && obj.source.depth > 1) || obj.depth > 1) {\n                obj=(obj.source) ? obj.source.parent : obj.parent;\n            }\n\n            d.linkColor=(obj.source) ? obj.source.linkColor : obj.linkColor;\n\n        });\n\n        // Update the nodes…\n        var node = vis.selectAll(\"g.node\")\n                .data(nodes, function(d) { return d.id || (d.id = ++i); });\n\n        // Enter any new nodes at the parent's previous position.\n        var nodeEnter = node.enter().append(\"svg:g\")\n                .attr(\"class\", \"node\")\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + source.y0 + \",\" + source.x0 + \")\";\n                })\n                .on(\"click\", function(d) {\n                    if (d.numChildren > 50) {\n                        alert(d.key + \" has too many departments (\" + d.numChildren + \") to view at once.\");\n                    }\n                    else {\n                        toggle(d);\n                        update(d);\n                    }\n                });\n\n        nodeEnter.append(\"svg:circle\")\n                .attr(\"r\", 1e-6)\n                .on(\"mouseover\", function(d) { node_onMouseOver(d);})\n                .on(\"mouseout\", function(d) {							// when the mouse leaves a circle, do the following\n                    toolTip.transition()									// declare the transition properties to fade-out the div\n                            .duration(500)									// it shall take 500ms\n                            .style(\"opacity\", \"0\");							// and go all the way to an opacity of nil\n                })\n                .style(\"fill\", function(d) { return d.source ? d.source.linkColor: d.linkColor;\n                })\n                .style(\"fill-opacity\", \".8\")\n                .style(\"stroke\", function(d) { return d.source ? d.source.linkColor: d.linkColor;\n                    });\n\n\n        nodeEnter.append(\"svg:text\")\n                .attr(\"x\", function(d) { return d.children || d._children ? -10 : 10; })\n                .attr(\"dy\", \".35em\")\n                .attr(\"text-anchor\",\n                function(d) {\n                    return d.children || d._children ? \"end\" : \"start\";\n                })\n                .text(function(d) {\n                    var ret= (d.depth==4) ? d.Level4 : d.key;\n                    ret = (String(ret).length > 25) ? String(ret).substr(0,22)  + \"...\" : ret;\n                    return ret;\n                })\n                .on(\"mouseover\", function(d) { node_onMouseOver(d);})\n                .on(\"mouseout\", function(d) {							// when the mouse leaves a circle, do the following\n                    toolTip.transition()									// declare the transition properties to fade-out the div\n                            .duration(500)									// it shall take 500ms\n                            .style(\"opacity\", \"0\");							// and go all the way to an opacity of nil\n                })\n                .style(\"fill-opacity\", \"0\");\n\n        // Transition nodes to their new position.\n        var nodeUpdate = node.transition()\n                .duration(duration)\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + d.y + \",\" + d.x + \")\";\n                });\n\n        nodeUpdate.select(\"circle\")\n                .attr(\"r\", function (d) {\n\n                        if (d.depth==0) {\n                            return 10;\n                        }\n                        else if (d.depth==1) {\n                            var ret = level1Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==2) {\n                            var ret = level2Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==3) {\n                            var ret = level3Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n                        else if (d.depth==4) {\n                            var ret = level4Radius(d[spendField]);\n                            return (isNaN(ret) ? 2 : ret);\n                        }\n\n                })\n                .style(\"fill\", function(d) { return d.source ? d.source.linkColor: d.linkColor})\n                .style(\"fill-opacity\",  function(d) {\n                    var ret = ((d.depth+1)/5);\n                    return ret; });\n\n\n\n\n        nodeUpdate.select(\"text\")\n                .style(\"fill-opacity\", 1);\n\n        // Transition exiting nodes to the parent's new position.\n        var nodeExit = node.exit().transition()\n                .duration(duration)\n                .attr(\"transform\", function(d) {\n                    return \"translate(\" + source.y + \",\" + source.x + \")\";\n                })\n                .remove();\n\n        nodeExit.select(\"circle\")\n                .attr(\"r\", 1e-6);\n\n        nodeExit.select(\"text\")\n                .style(\"fill-opacity\", 1e-6);\n\n        // Update the links…\n        var link = vis.selectAll(\"path.link\")\n                .data(tree.links(nodes), function(d) {\n                    return d.target.id;\n                });\n\n        var rootCounter=0;\n\n        // Enter any new links at the parent's previous position.\n        link.enter().insert(\"svg:path\", \"g\")\n                .attr(\"class\", \"link\")\n                .attr(\"d\", function(d) {\n                    if (Number(d.target[spendField]) > 0) {\n                        var o = {x: source.x0, y: source.y0};\n                        return diagonal({source: o, target: o});\n                    }\n                    else {\n                        null;\n                    }\n                })\n                .style(\"stroke\",function (d,i) {\n                    if (d.source.depth==0) {\n                        rootCounter++;\n                        return (d.source.children[rootCounter-1].linkColor);\n                    }\n                    else {\n                        return (d.source) ? d.source.linkColor : d.linkColor;\n                    }\n                })\n                .style(\"stroke-width\", function (d,i) {\n\n                    if (d.source.depth==0) {\n                        var ret = level1Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==1) {\n                        var ret = level2Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==2) {\n                        var ret = level3Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                    else if (d.source.depth==3) {\n                        var ret = level4Radius(d.target[spendField]) * 2;\n                        return (isNaN(ret) ? 4 : ret);\n                    }\n                 })\n                .style(\"stroke-opacity\", function(d){\n                    var ret = ((d.source.depth+1)/4.5)\n                    if (d.target[spendField] <= 0) ret=.1;\n                    return ret;\n                })\n                .style(\"stroke-linecap\",\"round\")\n                .transition()\n                .duration(duration);\n          //      .attr(\"d\", diagonal);\n\n\n        // Transition links to their new position.\n         var linkUpdate = link.transition()\n                .duration(duration)\n                .attr(\"d\", diagonal);\n\n         linkUpdate\n                 .style(\"stroke-width\", function (d,i) {\n                     if (d.source.depth==0) {\n                         var ret = level1Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==1) {\n                         var ret = level2Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==2) {\n                         var ret = level3Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                     else if (d.source.depth==3) {\n                         var ret = level4Radius(Number(d.target[spendField])) * 2;\n                         return (isNaN(ret) ? 4 : ret);\n                     }\n                })\n             //    .style(\"stroke-dasharray\", function(d) {\n             //       var ret=(d.target[spendField] > 0) ? \"\" : \"5,8\";\n             //       return ret;\n             //    })\n                 .style(\"stroke-opacity\", function(d){\n                     var ret = ((d.source.depth+1)/4.5)\n                     if (d.target[spendField] <= 0) ret=.1;\n                     return ret;\n                 })\n\n\n        // Transition exiting nodes to the parent's new position.\n        link.exit().transition()\n                .duration(duration)\n                .attr(\"d\", diagonal)\n                .remove();\n\n        // Stash the old positions for transition.\n        nodes.forEach(function(d) {\n            d.x0 = d.x;\n            d.y0 = d.y;\n        });\n\n\n        function node_onMouseOver(d) {\n            toolTip.transition()\n                    .duration(200)\n                    .style(\"opacity\", \".9\");\n            header.text(d[\"source_Level1\"]);\n            header1.text((d.depth > 1) ? d[\"source_Level2\"] : \"\");\n            header2.html((d.depth > 2) ? d[\"source_Level3\"] : \"\");\n            if (d.depth > 3) header2.html(header2.html() + \" - \"  + d[\"source_Level4\"]);\n\n            fedSpend.text(formatCurrency(d[\"sum_Federal\"]));\n\n            stateSpend.text(formatCurrency(d[\"sum_State\"]));\n\n            localSpend.text(formatCurrency(d[\"sum_Local\"]));\n\n            toolTip.style(\"left\", (d3.event.pageX+15) + \"px\")\n                    .style(\"top\", (d3.event.pageY-75) + \"px\");\n        }\n\n\n\n\n    }\n\n\n    function toggleButton(button) {\n        button.attr(\"class\",\"selected\");\n        if (button == federalButton) {\n            localButton.attr(\"class\",\"unselected\");\n            stateButton.attr(\"class\",\"unselected\");\n        }\n        else if (button == stateButton) {\n            localButton.attr(\"class\",\"unselected\");\n            federalButton.attr(\"class\",\"unselected\");\n        }\n        else {\n            federalButton.attr(\"class\",\"unselected\");\n            stateButton.attr(\"class\",\"unselected\");\n        }\n    }\n\n\n        // Toggle children.\n    function toggle(d) {\n        if (d.children) {\n            d._children = d.children;\n            d.children = null;\n        } else {\n            d.children = d._children;\n            d._children = null;\n        }\n    }\n\n\n</script>\n\n\n\n</body></html>",
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/n-barchart.css",
 			"settings":
 			{
-				"buffer_size": 22964,
+				"buffer_size": 34,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "  {\n   \"name\": \"Recovery\",\n   \"type\": \"category\",\n   \"linkcolor\": \"#f56954\",\n   \"className\" : \"Recovery\",\n   \"children\": [\n    {\n     \"name\": \"Recovery\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp112341\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 0,\n        \"weight\": 8,\n      },\n      {\n        \"name\": \"snp24234\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp35243\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 9,\n      },\n      \n     ]\n    },\n    {\n     \"name\": \"Muscle Fatigue\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp673654\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 2,\n      },\n      {\n        \"name\": \"snp263462\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp37777\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 9,\n      },\n     ]\n    },\n    {\n     \"name\": \"Lung Capacity\",\n     \"type\": \"phenotype\",\n     \"linkcolor\": \"#f56954\",\n     \"className\" : \"Recovery\",\n     \"children\": [\n      {\n        \"name\": \"snp673654\",\n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 2,\n      },\n      {\n        \"name\": \"snp263462\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 2,\n        \"weight\": 4,\n      },\n      {\n        \"name\": \"snp37777\", \n        \"type\": \"snp\",\n        \"linkcolor\": \"#f56954\",\n        \"className\" : \"Recovery\", \n        \"value\": 1,\n        \"weight\": 9,\n      },\n     ]\n    }\n   ]\n  }",
+			"file": "n-barchart.js",
 			"settings":
 			{
-				"buffer_size": 2547,
+				"buffer_size": 782,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/mike-nsb.html",
+			"settings":
+			{
+				"buffer_size": 2923,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/my-nsb.html",
+			"settings":
+			{
+				"buffer_size": 1302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/data.csv",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/1.html",
+			"settings":
+			{
+				"buffer_size": 2378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/percentileScore.json",
+			"settings":
+			{
+				"buffer_size": 269,
 				"line_ending": "Unix"
 			}
 		}
@@ -168,6 +220,27 @@
 	},
 	"file_history":
 	[
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data.html",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-stylus/node_modules/stylus/node_modules/sax/test/duplicate-attribute.js",
+		"/Users/nehiljain/coderepo/website/db.json",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/data.csv",
+		"/Users/nehiljain/coderepo/website/source/_posts/My-journey-to-Learn-Javascript-Properly.md",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/seven-curves.css",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/seven-curves.html",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/seven-curves.js",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-stylus/node_modules/nib/lib/nib/vendor.styl",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-stylus/node_modules/stylus/node_modules/sax/test/stray-ending.js",
+		"/Users/nehiljain/coderepo/website/source/_drafts/My-journey-to-A-graph-I-did-not-like.md",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-stylus/node_modules/stylus/lib/nodes/function.js",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-ejs/node_modules/ejs/examples/functions.js",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-ejs/node_modules/ejs/examples/functions.ejs",
+		"/Users/nehiljain/coderepo/website/themes/landscape/scripts/fancybox.js",
+		"/Users/nehiljain/Desktop/powerData.csv",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/powerCategoryData.json",
+		"/Users/nehiljain/coderepo/website/node_modules/hexo-renderer-ejs/node_modules/ejs/Makefile",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancetree.js",
+		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/starter-template.css",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/remove.js",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/21_each.html",
@@ -179,7 +252,6 @@
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/19_axes_static.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/d3-book/chapter_09/20_axes_dynamic.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/1.html",
-		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/js/performancetree.js",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/2.html",
 		"/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/index.html",
 		"/Users/nehiljain/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -187,7 +259,7 @@
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -201,6 +273,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data",
+			"anaerobic exercise",
+			"h3",
+			"Replace by Curve ",
 			"\"weight\"",
 			"\"weight\":",
 			"\"weight\"",
@@ -232,24 +308,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/starter-template.css",
+					"file": "/Users/nehiljain/coderepo/website/source/_drafts/Javascript-functions.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2462,
+						"buffer_size": 1401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								83,
+								83
 							]
 						],
 						"settings":
@@ -257,241 +333,42 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/performancetree.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2412,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "performancetree.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15680,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2914.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								289,
-								289
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -499,35 +376,7 @@
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close"
+								"bh_round_close"
 							],
 							"incomplete_sync": null,
 							"remote_loading": false,
@@ -538,23 +387,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 1,
+					"file": "seven-curves.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22964,
+						"buffer_size": 3670,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5402,
-								5402
+								1805,
+								1805
 							]
 						],
 						"settings":
@@ -562,52 +412,698 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close"
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1369.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/seven-curves.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								158
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/n-barchart.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1877,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								68,
+								68
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/css/n-barchart.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "n-barchart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 782,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/mike-nsb.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1575,
+								1575
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 439.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/my-nsb.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1290,
+								1290
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 292.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/data.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 68.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/1.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
 							],
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -618,19 +1114,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 10,
+					"file": "/Users/nehiljain/coderepo/data-visualisation-playground/starter-page/data/percentileScore.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2547,
+						"buffer_size": 269,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								2547
+								269,
+								269
 							]
 						],
 						"settings":
@@ -638,59 +1135,62 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close"
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
 							],
 							"incomplete_sync": null,
+							"open_with_edit": true,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 295.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -747,6 +1247,22 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"data-visualisation-playground/starter-page/data/data.csv"
+			],
+			[
+				"seve",
+				"data-visualisation-playground/starter-page/js/seven-curves.js"
+			],
+			[
+				"my",
+				"website/source/_posts/My-journey-to-Learn-Javascript-Properly.md"
+			],
+			[
+				"fu",
+				"website/source/_drafts/Javascript-functions.md"
+			],
+			[
 				"per",
 				"starter-page/js/performancetree.js"
 			],
@@ -784,7 +1300,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 298.0,
+	"side_bar_width": 50.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
