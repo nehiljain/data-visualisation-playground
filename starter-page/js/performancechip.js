@@ -3597,7 +3597,7 @@ var svg = d3.select("#genechip").append("div")
 
 
 node = root = geneticData;
-console.log(root);
+// console.log(root);
 
 var nodes = treemap.nodes(root)
     .filter(function (d) {
@@ -3625,7 +3625,7 @@ cell.append("svg:rect")
     .style("fill", function (d) {
       
 
-            console.log(d.categoryId, d.geneValue, d.weight);
+            // console.log(d.categoryId, d.geneValue, d.weight);
 
           if (Number(d.categoryId) > 0) {
             eval("var subColor = d3.scale.ordinal()" +

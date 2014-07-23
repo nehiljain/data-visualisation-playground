@@ -1,23 +1,82 @@
+
+
+
+
+
+
+
+
+
+
+
+
+.panel-darkblue {
+	border-style:none;
+}
+
+
+.panel-darkblue > div.panel-heading {
+	background-color: rgba(47,61,76,1);
+	color: #FFF;
+	border-color: rgba(47,61,76,1);
+}
+
+
+
+
 div.bar {
         display: inline-block;
 		float:left;
+		opacity: 0.6;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+}
 
-      }
+.category-label {
+	padding: 0px 15px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	border: 1px none #e0e0e0;
+	border-top-style: solid; 
+}
 
 
-.category_description {
+.category_tile {
   position: relative;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border: 1px solid;
-  padding: 10% 2%;
+  display: inline-table;
+  border: 1px none #e0e0e0;
+  border-right-style:solid;
+  padding-top: 5px;
   text-align: center; /*bootstrap class is not working here for some reason UNKNOWN*/ 
 }
+
+.category_tile:first-child {
+	border-left-style:none;
+}
+.category_tile:last-child {
+	border-right-style:none;
+}
+
+.category_tile > p {
+	min-height: 40px;
+	display: inline-table;
+}
+
+
+
+
 
 .up-arrow{
     position: relative;
 }
+
+
+
+
+
+
 
 .up-arrow::before, .up-arrow::after {
   
@@ -56,14 +115,26 @@ div.bar {
 .below {
 	color: #fff;
 	font-size: 1.2em;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.above {
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 /* this property might be a hack. it is to fix the height of p to accomodate 2 line names*/
 
-.category_description > p {
-	min-height: 40px;
-	display: inline-table;
-}
+
 
 /*
 .below:after{

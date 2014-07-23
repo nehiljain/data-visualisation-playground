@@ -1,0 +1,810 @@
+{
+    "name": "Performance Genes",
+    "children": [
+        {
+            "name": "Recovery",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 104,
+                    "value": 4.6443908991413725
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 3250,
+                    "value": 8.086410275323782
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 55,
+                    "value": 4.007333185232471
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 35,
+                    "value": 3.5553480614894135
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 114,
+                    "value": 4.736198448394496
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 6,
+                    "value": 1.791759469228055
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1751,
+                    "value": 7.467942332285852
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 52,
+                    "value": 3.9512437185814275
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5,
+                    "value": 1.6094379124341003
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1440,
+                    "value": 7.272398392570047
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 73,
+                    "value": 4.290459441148391
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 496,
+                    "value": 6.206575926724928
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 372,
+                    "value": 5.918893854273146
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 378,
+                    "value": 5.934894195619588
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 303,
+                    "value": 5.713732805509369
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 15,
+                    "value": 2.70805020110221
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 414,
+                    "value": 6.025865973825314
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 41,
+                    "value": 3.713572066704308
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 14247,
+                    "value": 9.564301637217232
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 407,
+                    "value": 6.008813185442595
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1528,
+                    "value": 7.331714969726466
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 131,
+                    "value": 4.875197323201151
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 18874,
+                    "value": 9.845540592581278
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 416,
+                    "value": 6.030685260261263
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 120,
+                    "value": 4.787491742782046
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 597,
+                    "value": 6.391917113392602
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 236,
+                    "value": 5.4638318050256105
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 11,
+                    "value": 2.3978952727983707
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 463,
+                    "value": 6.137727054086234
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 69277,
+                    "value": 11.145868239758318
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5459,
+                    "value": 8.605020901781758
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 3023,
+                    "value": 8.014004994779459
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 791,
+                    "value": 6.673297967767654
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 958,
+                    "value": 6.86484777797086
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1872,
+                    "value": 7.534762657037537
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 4434,
+                    "value": 8.397057390176256
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 40,
+                    "value": 3.6888794541139363
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1727,
+                    "value": 7.454141078146678
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 4,
+                    "value": 1.3862943611198906
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 7,
+                    "value": 1.9459101490553132
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 85,
+                    "value": 4.442651256490317
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 41,
+                    "value": 3.713572066704308
+                }
+            ]
+        },{
+            "name": "Injury",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1279,
+                    "value": 7.153833801578843
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 2582,
+                    "value": 7.856319571406588
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5164,
+                    "value": 8.549466751966532
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 298,
+                    "value": 5.697093486505405
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 21140,
+                    "value": 9.958922259424229
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 20986,
+                    "value": 9.951610827717856
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 562715,
+                    "value": 13.24052856225463
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 639134,
+                    "value": 13.36786941403555
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 25,
+                    "value": 3.2188758248682006
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 11593,
+                    "value": 9.358156746670401
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 4535,
+                    "value": 8.419580362549237
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5937,
+                    "value": 8.688959234270676
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 3876,
+                    "value": 8.262558973010657
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 108,
+                    "value": 4.68213122712422
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1257,
+                    "value": 7.136483208590247
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 29,
+                    "value": 3.367295829986474
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 505242,
+                    "value": 13.132792801394842
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 6768091,
+                    "value": 15.727729625804281
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 2168225,
+                    "value": 14.589419418444487
+                }
+            ]
+        },{
+            "name": "Anaerobics",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 59,
+                    "value": 4.07753744390572
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 317,
+                    "value": 5.75890177387728
+                }
+            ]
+        },{
+            "name": "Endurance",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 50,
+                    "value": 3.912023005428146
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 250,
+                    "value": 5.521460917862246
+                }
+            ]
+        },{
+            "name": "Power",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 92,
+                    "value": 4.5217885770490405
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 23,
+                    "value": 3.1354942159291497
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 384,
+                    "value": 5.950642552587727
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1616,
+                    "value": 7.38770923908104
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 313022,
+                    "value": 12.654028754592172
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5256320,
+                    "value": 15.47494172009391
+                }
+            ]
+        },{
+            "name": "Metabolism",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 6,
+                    "value": 1.791759469228055
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 7,
+                    "value": 1.9459101490553132
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5,
+                    "value": 1.6094379124341003
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 5,
+                    "value": 1.6094379124341003
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 6,
+                    "value": 1.791759469228055
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 19,
+                    "value": 2.9444389791664403
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 21,
+                    "value": 3.044522437723423
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 221,
+                    "value": 5.3981627015177525
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 63418,
+                    "value": 11.05750301180195
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 222,
+                    "value": 5.402677381872279
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 204,
+                    "value": 5.318119993844216
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1,
+                    "value": 0.0
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 389,
+                    "value": 5.963579343618446
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 49,
+                    "value": 3.8918202981106265
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 49,
+                    "value": 3.8918202981106265
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 77,
+                    "value": 4.343805421853684
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1404,
+                    "value": 7.247080584585756
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 113,
+                    "value": 4.727387818712341
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1058,
+                    "value": 6.964135612418245
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 113,
+                    "value": 4.727387818712341
+                }
+            ]
+        },{
+            "name": "Motivation",
+            "children": [
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 1021,
+                    "value": 6.928537818164665
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 2,
+                    "value": 0.6931471805599453
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 83,
+                    "value": 4.418840607796598
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 80,
+                    "value": 4.382026634673881
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 80,
+                    "value": 4.382026634673881
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 82,
+                    "value": 4.406719247264253
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 81,
+                    "value": 4.394449154672439
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 28,
+                    "value": 3.332204510175204
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 25,
+                    "value": 3.2188758248682006
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 25,
+                    "value": 3.2188758248682006
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 566,
+                    "value": 6.338594078203183
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 82,
+                    "value": 4.406719247264253
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 81,
+                    "value": 4.394449154672439
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 2,
+                    "value": 0.6931471805599453
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 273,
+                    "value": 5.60947179518496
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 81,
+                    "value": 4.394449154672439
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 79,
+                    "value": 4.3694478524670215
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 78,
+                    "value": 4.356708826689592
+                },
+                {
+                    "url" : "http://athletigen.com",
+                    "name": "Snp Bla",
+                    "size": 82,
+                    "value": 4.406719247264253
+                }
+            ]
+        }
+    ]
+}
+
+
