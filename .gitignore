@@ -5,3 +5,7 @@
 
 *.subli*
 *.DS_Store
+
+*.xl*
+*.csv
+*.json
